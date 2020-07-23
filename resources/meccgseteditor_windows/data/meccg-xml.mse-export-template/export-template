@@ -1,0 +1,123 @@
+﻿mse version: 0.3.8
+game: 			 meccg
+short name:  xml
+full name:	 XML for GCCG
+file type:	 *.xml
+icon: preview.png
+create directory: true
+version: 2009-03-19
+depends on: meccg.mse-game 2009-03-19
+
+#By: karmi
+
+########################################################################################
+
+script:
+	is_hazard := { contains(card.background, match: "Hazard") }
+	is_hero := { contains(card.background, match: "Hero") }
+	is_minion := { contains(card.background, match: "Minion") }
+	is_stage := { contains(card.background, match: "Stage") }
+	is_ally := { contains(card.background, match: "Ally") }
+	is_avatar := { contains(card.background, match: "Avatar") }
+	is_character := { contains(card.background, match: "Character") }
+	is_agent := { contains(card.background, match: "Agent") }
+	is_hazard := { contains(card.background, match: "Hazard") }
+	is_creature := { contains(card.background, match: "Creature") }
+	is_site := { contains(card.background, match: "Site") }
+	is_event := { contains(card.background, match: "Event") }
+	is_item := { contains(card.background, match: "Item") }
+	is_balrog := { contains(card.background, match: "Balrog") }
+	is_unique := { contains(card.rules_text, match: "Unique.") or ( is_site() and (not contains(card.site_type, match: "H") and not contains(card.site_type, match: "K") ) ) }
+	has_mind := { is_ally() or is_character() or is_avatar() or is_agent() }
+	has_influence := { is_ally() or is_character() or is_avatar() or is_agent() or is_event() or is_item() }
+	has_home_site := { is_character() or is_avatar() or is_agent() }
+	has_cp := { is_character() or is_event() or is_item() }
+	has_class := { not is_site() and not is_character() and not is_avatar() }
+	has_specific2 := { replace(match: ".* ([^ ]+) (specific\\.).*", replace: {_1}, to_text(input)) }
+	has_specific := { replace(match: " [Ss]pecific.", replace: "", filter_text(match: "([^ ]+) ([Ss]pecific\\.)", to_text(input))) }
+	has_strikes := { count_strikes(replace(match: ".+ ([^ ]+) +(strike\\.|strikes\\.).+", replace: {_1}, to_text(input))) }
+	has_subclass := {
+		sub := to_text(input)
+		all_subs := ""
+		sub_list := split_text(match: "\\. ", sub)
+		for each s in sub_list do (
+			if not contains(match: " ", s) and not contains(match: "Unique", s) then (
+				if all_subs != "" then all_subs := all_subs + ", "
+				all_subs := all_subs + s
+			)
+		)
+		all_subs
+	}
+	curly_symbols := {
+		for i from 0 to (length(input) - 1) do (
+			"\{" + input[i] + "\}"
+		)
+	}
+	count_strikes := {
+		input := to_lower(input)
+		if not is_creature() then "" else if (input == "one" and contains(card.rules_text, match: "faces one strike")) then "1/each" else if input == "one" then "1" else if input == "two" then "2" else if input == "three" then "3" else if input == "four" then "4" else if input == "five" then "5" else if input == "six" then "6" else input
+	}
+	
+	remove_prefix := { replace(match: "([^:]+):( ?)", replace: "", to_text(input)) }
+	
+	fix := { trim(replace(match: "[ ]+", replace: " ", "{replace(match: "\\n", replace: "" to_text(input))}")) }
+
+	to_xml := {
+		fix(replace(match: "\\&", replace: "\\&amp;" to_text(input)))
+	}
+
+	to_filename := {
+		fix(replace(match: "[\\\\/?%*:|\"<>.]", replace: "" to_text(input)))
+	}
+
+	write_card := {
+		card_xml := "
+			<card name=\"{card.name}\" graphics=\"{to_filename(card.name)}.jpg\" {if is_site() then "back=\"1\" "}text=\"{to_xml(card.rules_text)}\">
+				 <attr key=\"type\" value=\"{ if is_hero() then "Hero " else if is_balrog() then "Balrog " else if (is_stage() and is_site()) then "Fallen-wizard " else if is_stage() then "Stage " else if is_minion() then "Minion " }{ if is_character() then "Character" else if is_hazard() then "Hazard" else if is_site() then "Site" else "Resource" }\"/>
+				 <attr key=\"rarity\" value=\"{card.rarity}\"/>
+				 { if is_unique() then "<attr key=\"unique\" value=\"yes\"/>" }
+				 { if has_class() then "<attr key=\"class\" value=\"{ replace (match: " [Oo]r ", replace: "/", card.class)}\"/>" }
+				 { if card.prowess != "" then "<attr key=\"prowess\" value=\"{card.prowess}\"/>" }
+				 { if card.body != "" then "<attr key=\"body\" value=\"{card.body}\"/>" }
+				 { if card.mind != "" then "<attr key=\"mind\" value=\"{card.mind}\"/>" }
+				 { if card.influence != "" then "<attr key=\"influence\" value=\"{card.influence}\"/>" }
+				 { if card.mp != "" then "<attr key=\"mp\" value=\"{card.mp}\"/>" }
+				 { if card.cp != "" then "<attr key=\"cp\" value=\"{card.cp}\"/>" }
+				 { if card.sp != "" then "<attr key=\"sp\" value=\"{card.sp}\"/>" }
+				 { if card.playable != "" then "<attr key=\"playable\" value=\"{curly_symbols(fix(card.playable))}\"/>" }
+				 { if card.site_type != "" then "<attr key=\"site_type\" value=\"{curly_symbols(to_text(card.site_type))}\"/>" }
+				 { if card.site_path != "" then "<attr key=\"site_path\" value=\"{curly_symbols(fix(card.site_path))}\"/>" }
+				 { if length(remove_prefix(card.home_site)) > 0 then "<attr key=\"home_site\" value=\"{remove_prefix(to_xml(card.home_site))}\"/>" }
+				 { if card.draw != "" then "<attr key=\"draw\" value=\"{card.draw}\"/>" }
+				 { if card.draw_opp != "" then "<attr key=\"draw_opp\" value=\"{card.draw_opp}\"/>" }
+				 { if is_site() then "<attr key=\"region\" value=\"{card.class}\"/>" }
+				 { if length(remove_prefix(card.haven)) > 0 then "<attr key=\"{if to_lower(card.class) == "under-deeps" then "adjacent" else "haven"}\" value=\"{remove_prefix(to_xml(card.haven))}\"/>" }
+				 { if length(remove_prefix(card.site_playable)) > 0 then "<attr key=\"playable\" value=\"{remove_prefix(to_xml(card.site_playable))}\"/>" }
+				 { if length(remove_prefix(card.auto_attack)) > 0 then "<attr key=\"auto_attack\" value=\"{remove_prefix(to_xml(card.auto_attack))}\"/>" }
+				 { if length(remove_prefix(card.special)) > 0 then "<attr key=\"special\" value=\"{remove_prefix(to_xml(card.special))}\"/>" }
+				 { if length(has_specific(card.rules_text)) > 1 then "<attr key=\"specific\" value=\"{has_specific(to_xml(card.rules_text))}\"/>" }
+				 { if length(has_strikes(card.rules_text)) > 0 then "<attr key=\"strikes\" value=\"{has_strikes(to_xml(card.rules_text))}\"/>" }
+				 { if is_creature() then "<attr key=\"subclass\" value=\"{has_subclass(to_xml(card.rules_text))}\"/>" }
+				 { if is_character() then "<attr key=\"skills\" value=\"{trim(filter_text(match: "(.*)\\s", card.class))}\"/>" }
+				 { if is_character() then "<attr key=\"race\" value=\"{trim(filter_text(match: "\\s(.*)", card.class))}\"/>" }
+			</card>"
+		replace(match: "\\n[\\W]+\\n", replace: "\\n", card_xml)
+	}
+	write_cards := {
+		"{
+			for each card in sort_list(cards, order_by: {input.name} ) do (
+				 write_image_file(card, file: "{to_filename(card.name)}.jpg")
+				 write_card()
+			)
+		}"
+	}
+
+	# xml page
+	set_xml := "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>
+	<!DOCTYPE ccg-setinfo SYSTEM \"../gccg-set.dtd\">
+	<ccg-setinfo name=\"{set.name}\" dir=\"{set.dir}\" abbrev=\"{set.abbrev}\" game=\"Middle-earth\">
+		<cards>{ write_cards(cards: cards) }
+		</cards>
+	</ccg-setinfo>"
+	#write_text_file(set_xml, file:"{set.dir}.xml")
+	replace(match: "\\n", replace: "\\r", set_xml)

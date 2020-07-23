@@ -1,0 +1,811 @@
+mse version: 0.3.8
+game: meccg
+full name: Challenge Deck Side Board
+short name: challengesideboard
+icon: icon.png
+position hint: 001
+
+version: 2018-11-25
+depends on:
+	package: meccg.mse-game
+	version: 2018-11-25
+depends on:
+	package: meccghq-icons.mse-symbol-font
+	version: 2018-11-25
+
+#By: Jason Smith
+
+card width: 750
+card height: 1050
+card dpi: 300
+
+#Fonts used:
+#  Arial
+#  Cirth Erebor
+#  MECCGBold
+#  Times New Roman
+#  Times New Roman 180
+#  Times Small Caps & Old Style Fi
+#  Palatino Small Caps & Old Style
+
+############################################################ Style Scripts
+init script:
+	is_region := { contains(card.background, match: "Region") }
+	is_regionvertical := { contains(card.background, match: "RegionVertical") }
+	is_regionhorizontal := { contains(card.background, match: "RegionHorizontal") }
+	is_hazard := { contains(card.background, match: "Hazard") }
+	is_hero := { contains(card.background, match: "Hero") }
+	is_minionhero := { contains(card.background, match: "MinionHero") }
+	is_minion := { contains(card.background, match: "Minion") and not contains(card.background, match: "Balrog") }
+	is_stage := { contains(card.background, match: "Stage") }
+	is_ally := { contains(card.background, match: "Ally") }
+	is_avatar := { contains(card.background, match: "Avatar") }
+	is_character := { contains(card.background, match: "Character") }
+	is_agent := { contains(card.background, match: "Agent") }
+	is_hazardagent := { contains(card.background, match: "Haz") }
+	is_creature := { contains(card.background, match: "Creature") }
+	is_site := { contains(card.background, match: "Site") }
+	is_event := { contains(card.background, match: "Event") }
+	is_item := { contains(card.background, match: "Item") }
+	is_resource := { not is_character() and not is_site() and not is_hazard() and not is_avatar() }
+	is_balrog := { contains(card.background, match: "Avatar Balrog") }
+	is_ringwraith := { contains(card.background, match: "Ringwraith") }
+	is_fallenwizard := { not is_dreamcard() and is_avatar() and is_stage() }
+	is_dreamcard := { contains(card.background, match: "lord") }
+	is_elflord := { contains(card.background, match: "Elflord") }
+	is_dragonlord := { contains(card.background, match: "Dragonlord") }
+	is_dwarflord := { contains(card.background, match: "Dwarflord") }
+	is_manlord := { contains(card.background, match: "Manlord") }
+	is_Dunadanlord := { contains(card.background, match: "Dunadanlord") }
+	has_cp := { is_character() or is_event() or is_item() or is_dreamcard() }
+	has_mind := { not is_region() or is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) or is_dreamcard() }
+	has_influence := { is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) }
+	has_influence2 := { is_dreamcard() or (not is_stage() and is_resource() and is_item()) }
+	has_influenceg := { (is_avatar() and is_stage()) or (is_stage() and is_event()) }
+	has_sp := { (is_resource() and is_stage()) or (is_site() and is_stage()) or (is_hazard() and is_event()) or (is_minion() and is_resource()) }
+	has_home_site := { is_character() or is_avatar() or is_agent() }
+	has_diagonalprowess := { contains(card.background, match: "DiagonalPB") }
+
+############################################################ Card Fields
+card style:
+	background:
+		left: 0
+		top: 0
+		width: 750
+		height: 1050
+		z index: -1
+		render style: image
+		popup style: in place
+		choice images:
+			Region RegionVertical: region_vertical.png
+			Region RegionHorizontal: region_horizontal.png
+			Hazard Agent: hazard_agent_haz.png
+			Hazard Agent Haz: hazard_agent_haz2.png
+			Hazard Agent Minion: hazard_agent_minion.png
+			Hazard Creature: hazard_creature.png
+			Hazard Creature DiagonalPB: hazard_creature.png
+			Hazard Event: hazard_event.png
+			Hero Ally: hero_ally.png
+			Hero Ally DiagonalPB: hero_ally.png
+			Hero Avatar Alatar: wizard_alatar.png
+			Hero Avatar Gandalf: hero_wizard_gandalf.png
+			Hero Avatar Pallando: wizard_pallando.png
+			Hero Avatar Radagast: hero_wizard_radagast.png
+			Hero Avatar Saruman: hero_wizard_saruman.png
+			Hero Character: hero_character.png
+			Hero Event: hero_event.png
+			Hero Faction: hero_faction.png
+			Hero Item: hero_item.png
+			Hero Item DiagonalPB: hero_item.png
+			Hero Site: hero_site.png
+			MinionHero Ally: minionhero_ally.png
+			MinionHero Ally DiagonalPB: minionhero_ally.png
+			MinionHero Event: minionhero_event.png
+			MinionHero Faction: minionhero_faction.png
+			MinionHero Item: minionhero_item.png
+			MinionHero Item DiagonalPB: minionhero_item.png
+			MinionHero Character: minionhero_character.png
+			MinionHero Grey Agent: grey_agent.png
+			MinionHero Site: minionhero_site.png
+			Minion Ally: minion_ally.png
+			Minion Ally DiagonalPB: minion_ally.png
+			Minion Avatar Balrog: minion_avatar.png
+			Minion Avatar Ringwraith: minion_avatar.png
+			Minion Character: minion_character.png
+			Minion MECA Character: meca_character.png
+			Minion Event: minion_event.png
+			Minion Faction: minion_faction.png
+			Minion Item: minion_item.png
+			Minion Item DiagonalPB: minion_item.png
+			Minion Site Balrog: minion_site_balrog.png
+			Minion Site Minion: minion_site_minion.png
+			Stage Ally: stage_ally.png
+			Stage Ally DiagonalPB: stage_ally.png
+			Stage Avatar Dunadanlord: dunadan_lord.png
+			Stage Avatar Manlord: man-lord.png
+			Stage Avatar Elflord: elflord.png
+			Stage Avatar Dwarflord: dwarflord.png
+			Stage Avatar Alatar: wizard_alatar.png
+			Stage Avatar Gandalf: wizard_gandalf.png
+			Stage Avatar Pallando: wizard_pallando.png
+			Stage Avatar Radagast: wizard_radagast.png
+			Stage Avatar Saruman: wizard_saruman.png
+			Stage Avatar Dragonlord: dragonlord.png
+			Stage Event: stage_event.png
+			Stage Faction: stage_faction.png
+			Stage Item: stage_item.png
+			Stage Item DiagonalPB: stage_item.png
+			Stage Site: stage_site.png
+	name:
+		left: {if is_regionvertical() then 85 else if is_regionhorizontal() then 660 else 167}
+		top: { if is_site() then 76 else if is_regionvertical() then 77 else if is_regionhorizontal() then 380 else 70 }
+		width: {if is_region() then 580 else 497}
+		height: 47
+		angle: {if is_regionhorizontal() then -90 else 0 }
+		z index: 1
+		alignment: center middle shrink-overflow
+		#alignment: center middle
+		font:
+			name: Palatino Small Caps & Old Style
+			color: { if is_balrog() or is_ringwraith() or is_minionhero() then rgb(255,255,255) else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0) else rgb(255,255,255) }
+			size: { if is_site() then 26 else 28 }
+			weight: bold
+			scale down to: 6
+			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0) else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
+			shadow displacement x: 2
+			shadow displacement y: 2
+	text:
+		left: { if is_hazard() then 93 else if is_regionvertical() then 147 else if is_regionhorizontal() then 150 else if not is_site() then 96 else 2000 }
+		top: { if is_regionvertical() then 876 else if is_regionhorizontal() then 130 else if not is_site() then 658 else 2000 }
+		width: {if is_region() then 510 else 568}
+		height: {if is_region() then 80 else 312}
+		alignment: {if is_region() then "top center" else if card.rules_text == "" then "middle left" else "top left" }
+		z index: 2
+		angle: { if is_regionhorizontal() then -90 else 0 }
+		alignment: { if is_region() then "center middle" else "top left" }
+		visible: { not is_site()}
+		font:
+			name: Times New Roman
+			color: { if is_region() then rgb(66,65,49) else rgb(0,0,0) }
+			size: {if is_region() then 22 else 22}
+			scale down to: 12
+		symbol font:
+			name: meccghq-icons
+			size: 24
+			alignment: middle center
+		padding left:	6
+		padding top:	2
+		padding right:	4
+		padding bottom: 2
+		line height hard: 1.3
+		line height line: 1.1
+		mask: mask_text.png
+	flavor text:
+		font:
+			name: Times New Roman
+			color: rgb(0,0,0)
+			size: 18
+			scale down to: 12
+		padding top:		2
+	region type:
+		left: { if is_regionhorizontal() then 254 else 78 }
+		top: { if is_regionhorizontal() then 70 else 785 }
+		width: 62
+		height: 95
+		z index: 4
+		angle: { if is_regionhorizontal() then -90 else 0 }
+		alignment: "top center"
+		visible: { is_region() }
+		always symbol: true
+		symbol font:
+			name: meccghq-icons
+			size: 40
+		direction: top to bottom
+	site text:
+		left: { if is_site() then 102 else 1000 }
+		top: { if is_site() then 646 else 1000 }
+		width: 559
+		height: 306
+		z index: 2
+		alignment: top left
+		visible: { is_site() }
+		font:
+			name: Times New Roman
+			color: rgb(0,0,0)
+			size: 22
+			scale down to: 12
+		symbol font:
+			name: meccghq-icons
+			size: 24
+			alignment: middle center
+		padding left:	6
+		padding top:		2
+		padding right:	4
+		padding bottom: 2
+		line height hard: 1.3
+		line height line: 1.1
+		mask: mask_site.png
+	picture:
+		left: { if is_site() then 145 else if is_region() then 2000 else 136 }
+		top: { if is_site() then 145 else if is_region() then 2000 else 142 }
+		width: { if is_site() then 515 else 534 }
+		height: { if is_site() then 436 else 453 }
+		visible: { not is_region()}
+		mask: { if is_site() then "site_card_picture_mask.png" else "card_picture_mask.png" }
+	region picture:
+		left: { if is_region() then 0 else 1000 }
+		top:  0
+		width: 750
+		height: 1050
+		visible: { is_region() }
+		mask: { if is_regionvertical() then "region_vertical_mask.png" else if is_regionhorizontal() then "region_horizontal_mask.png" }
+	playable:
+		left: { if is_creature() then 73 else 1000 }
+		top: { if is_creature() then 163 else 2000 }
+		width: 50
+		height: 370
+		z index: 4
+		alignment: top center
+		visible: { is_creature() }
+		always symbol: true
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 30
+			weight: bold
+			scale down to: 8
+		symbol font:
+			name: meccghq-icons
+			size: 36
+			alignment: middle center
+		direction: top to bottom
+	site type:
+		left: { if is_site() then 75 else 1000 }
+		top: { if is_site() then 70 else 1000 }
+		width: 62
+		height: 64
+		z index: 1
+		alignment: top center
+		visible: { is_site() }
+		always symbol: true
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 22
+			weight: bold
+			scale down to: 8
+		symbol font:
+			name: meccghq-icons
+			size: 40
+			alignment: middle center
+	site path:
+		left: { if is_site() then 83 else 1000 }
+		top: { if is_site() then 180 else 1000 }
+		width: 50
+		height: 350
+		z index: 1
+		alignment: top center
+		visible: { is_site() }
+		line height soft: 1.2
+		always symbol: true
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 30
+			weight: bold
+			scale down to: 8
+		symbol font:
+			name: meccghq-icons
+			size: 34
+			alignment: middle center
+		direction: top to bottom
+	mind:
+		left: { if is_stage() and is_event() or is_region() then 1000 else if has_mind() then 80 else 1000 }
+		top: { if is_dreamcard() then 265 else 211 }
+		width: 40
+		height: 40
+		z index: 4
+		alignment: center shrink-overflow
+		visible: { not is_region() }
+		visible: { not is_fallenwizard() }
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 25
+			weight: bold
+			scale down to: 8
+
+	influenceg:
+		left: { if has_influenceg() then 86 else 1000 }
+		top: { if is_dreamcard() then 201 else 235 }
+		width: 28
+		height: 40
+		z index: 4
+		alignment: center shrink-overflow
+		visible: { not is_region()}
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 20
+			weight: bold
+			scale down to: 8
+
+	influence:
+		left: { if has_influence() then 84 else 1000 }
+		top: { if is_avatar() and is_stage() then 359 else if is_avatar() and is_minion() then 332 else if is_item() then 334 else if is_avatar() then 334 else 332 }
+		width: 28
+		height: 40
+		z index: 4
+		alignment: center shrink-overflow
+		visible: { not is_region()}
+		font:
+			name: MECCGBold
+			color: rgb(255,255,255)
+			size: { if is_item() then 16 else if is_dreamcard() then 20 else if is_avatar() and is_hero() then 14 else 20 }
+			weight: bold
+			scale down to: 8
+
+	influence2:
+		left: { if has_influence2() then 84 else 1000 }
+		top: { if is_dreamcard() then 445 else 400 }
+		width: 28
+		height: 40
+		z index: 4
+		alignment: center shrink-overflow
+		visible: { is_item() or is_dreamcard() }
+		font:
+			name: MECCGBold
+			color: rgb(255,255,255)
+			size: 16
+			weight: bold
+			scale down to: 8
+
+	sp:
+		left: { if is_stage() and is_site() then 85 else if has_sp() then 77 else 1000 }
+		top: 415
+		width: 40
+		height: 40
+		z index: 4
+		alignment: center shrink-overflow
+		font:
+			name: MECCGBold
+			color: rgb(0,0,0)
+			size: 26
+			weight: bold
+			scale down to: 8
+	class:
+		left: { if is_region() then 2000 else 140 }
+		top: { if is_site() then 595 else if is_character() then 606 else if is_avatar() and is_stage() then 609 else 608 }
+		width: { if is_site() then 522 else 536 }
+		height: 33
+		z index: 1
+		alignment: right shrink-overflow
+		visible: { not is_region() }
+		font:
+			name: Times Small Caps & Old Style Fi
+			color: { if is_balrog() or is_ringwraith() then rgb(255,255,255) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0) else rgb(255,255,255) }
+			size: { if is_avatar() and is_stage() then 20 else 23 }
+			#weight: bold
+			scale down to: 8
+			shadow color: { if is_balrog() or is_ringwraith() then rgb(0,0,0) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
+			shadow displacement x: 2
+			shadow displacement y: 2
+
+	artist:
+		left: { if is_regionhorizontal() then 95 else 360 }
+		top: { if is_site() then 935 else if is_regionvertical() then 967 else if is_regionhorizontal() then 660 else 957 }
+		width: { if is_site() then 244 else 244 }
+		height: 27
+		z index: 4
+		angle: { if is_regionhorizontal() then -90 else 0 }
+		alignment: center shrink-overflow
+		font:
+			name: Times Small Caps & Old Style Fi
+			color: { if is_balrog() or is_ringwraith() then rgb(255,255,255) else if is_avatar() or (is_minionhero() and is_agent() ) or ( is_hero() and is_character() or is_site() or is_region() ) then rgb(0,0,0) else rgb(255,255,255) }
+			size: { if is_region() then 20 else 16 }
+			scale down to: 4
+	mp:
+		left: { if is_site() or is_region() then 1000 else if is_character() then 62 else 62 }
+		top: { if is_character() then 61 else 63 }
+		width: 75
+		height: 68
+		z index: 1
+		alignment: middle center shrink-overflow
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: Times New Roman
+			#weight: bold
+			color: { if (is_minionhero() and is_agent() ) then rgb(0,0,0) else if is_minionhero() then rgb(255,255,255) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(0,0,0) else rgb(255,255,255)}
+			#size: { if is_item() then (40 - (length(card.mp) * 2)) else (40 - (length(card.mp) * 3)) }
+			size: 40
+			scale down to: 8
+	prowess:
+		left: { if has_diagonalprowess() then 45 else 800 }
+		top: 918
+		width: 45
+		height: 60
+		z index: 1
+		alignment: right shrink-overflow
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: Times New Roman
+			color: rgb(255,255,255)
+			#size: { 32 - (length(card.prowess) + length(card.body)) }
+			size: 32
+			#weight: bold
+			scale down to: 8
+			separator color: rgb(200,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: 1
+			shadow displacement y: 1
+	body:
+		left: { if has_diagonalprowess() then 92 else 800 }
+		top: 944
+		width: 45
+		height: 60
+		z index: 1
+		alignment: left shrink-overflow
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: Times New Roman
+			color: rgb(255,255,255)
+			#size: { 32 - (length(card.prowess) + length(card.body)) }
+			size: 32
+			#weight: bold
+			scale down to: 8
+			separator color: rgb(200,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: 1
+			shadow displacement y: 1
+	pb:
+		left: { if is_site() or is_region() or has_diagonalprowess() then 800 else 48 }
+		top: 928
+		width: 90
+		height: 60
+		z index: 1
+		alignment: center shrink-overflow
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: Times New Roman
+			color: rgb(255,255,255)
+			#size: { 32 - (length(card.prowess) + length(card.body)) }
+			size: 32
+			scale down to: 8
+			separator color: rgb(200,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: 1
+			shadow displacement y: 1
+	prowess body separator:
+		left: { if has_diagonalprowess() then 88 else 1000 }
+		top: 930
+		width: 10
+		height: 60
+		z index: 1
+		alignment: center
+		visible: { card.prowess != "" and has_diagonalprowess() }
+		font:
+			name: Times New Roman
+			color: rgb(255,255,255)
+			#size: { 32 - (length(card.prowess) + length(card.body)) }
+			size: 32
+			scale down to: 8
+			separator color: rgb(200,0,0)
+			shadow color: rgb(0,0,0)
+			shadow displacement x: 1
+			shadow displacement y: 1
+	random:
+		left: { if is_site() or is_region() then 1000 else 653 }
+		top: 714
+		width: 27
+		height: 27
+		z index: 1
+		alignment: center
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: MECCGBold
+			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			size: 15
+			scale down to: 8
+			#weight: bold
+	set:
+		left: { if is_site() then 647 else 652 }
+		top: { if is_site() then 842 else 864 }
+		width: 27
+		height: 30
+		z index: 1
+		alignment: center
+		visible: { not is_region() }
+		font:
+			name: Cirth Erebor
+			color: rgb(48,37,55)
+			#color: rgb(32,209,199)
+			size: 16
+			scale down to: 8
+	copyright:
+		left: { if is_regionvertical() then 375 else if is_regionhorizontal() then 600 else 130 }
+		top: { if is_site() then 980 else if is_regionvertical() then 140 else if is_regionhorizontal() then 600 else 992 }
+		width: 450
+		height: 22
+		z index: 1
+		angle: { if is_regionhorizontal() then -90 else 0 }
+		alignment: left
+		font:
+			name: Arial
+			#color: { if is_hero() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_region() then rgb(0,0,0) else rgb(255,255,255) }
+			weight: bold
+			size: 13
+			scale down to: 6
+			shadow color: { if is_region() then rgb(255,255,255) else rgb(0,0,0) }
+			shadow displacement x: 1
+			shadow displacement y: 1
+	cp:
+		left: { if is_site() or is_region() then 1000 else if is_hero() then 630 else 630 }
+		top: 945
+		width: 60
+		height: 50
+		z index: 3
+		alignment: center shrink-overflow
+		visible: { not is_site() }
+		visible: { not is_region() }
+		font:
+			name: Times New Roman
+			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			#weight: bold
+			size: 28
+			scale down to: 8
+	home site:
+		left: { if has_home_site() then 145 else 1000 }
+		top: { if has_home_site() then 913 else 2000 }
+		width: 465
+		height: 30
+		z index: 3
+		alignment: right
+		visible: { has_home_site() }
+		font:
+			name: Times New Roman
+			color: rgb(0,0,0)
+			size: 18
+			scale down to: 8
+		line height hard: 1.3
+		line height line: 1.1
+		#mask: mask_home_site.png
+	draw opp:
+		left: { if is_site() then 76 else 1000 }
+		top: { if is_site() then 867 else 1000 }
+		width: 61
+		height: 50
+		z index: 1
+		alignment: middle center
+		visible: { is_site() }
+		font:
+			name: Times New Roman 180
+			color: rgb(255,255,255)
+			size: 28
+			scale down to: 8
+			weight: bold
+	draw:
+		left: { if is_site() then 76 else 1000 }
+		top: { if is_site() then 918 else 1000 }
+		width: 61
+		height: 50
+		z index: 1
+		alignment: middle center
+		visible: { is_site() }
+		font:
+			name: Times New Roman
+			color: rgb(0,0,0)
+			size: 28
+			scale down to: 8
+			weight: bold
+	fw:
+		left: { if is_stage() and is_resource() then 64 else 1000 }
+		top: 550
+		width: 75
+		height: 80
+		z index: 1
+	challengedeck:
+		left: { if is_site() then 647 else 651 }
+		top: { if is_site() then 765 else 787 }
+		width: 30
+		height: 30
+		z index: 2
+		alignment: middle center
+		visible: { not is_region() }
+		font:
+			name: MECCGBold
+			color: rgb(255,255,255)
+			size: 18
+
+############################################################ Extra Card Fields
+extra card field:
+	type: choice
+	name: cp icon
+	editable: false
+	choice: default
+
+extra card style:
+	cp icon:
+		left: 626
+		top: 936
+		width: 70
+		height: 63
+		z index: 2
+		#visible: { card.cp != "" and has_cp() }
+		visible: { card.cp != "" }
+		render style: image
+		choice images:
+			default: { if is_minionhero() and is_character() then "cp_icon_hero_character.png" else if is_minionhero() then "cp_icon_hero.png" else if is_hero() and is_character() then "cp_icon_hero_character.png" else if is_minion() and is_character() then "cp_icon_minion_character.png" else if is_hazardagent() then "cp_icon_hazard.png" else if is_hazard() then "cp_icon_hazard.png" else if is_minion() then "cp_icon_minion.png" else if is_elflord() then "cp_icon_elflord.png" else if is_dwarflord() then "cp_icon_dwarflord.png" else if is_dragonlord() then "cp_icon_dragonlord.png" else if is_stage() then "cp_icon_stage.png" else "cp_icon_hero.png" }
+
+extra card field:
+	type: choice
+	name: mind icon
+	editable: true
+	choice: normal
+	choice: black
+
+extra card style:
+	mind icon:
+		left: 76
+		top: { if is_dreamcard() then 260 else if is_avatar() then 205 else 205 }
+		width: 45
+		height: 57
+		z index: 2
+		visible: { has_mind() and card.mind != "" }
+		render style: image
+		choice images:
+			normal: mind.png
+			black: mind2.png
+
+extra card field:
+	type: choice
+	name: influenceg icon
+	editable: false
+	choice: default
+
+extra card style:
+	influenceg icon:
+		left: 70
+		top: { if is_dreamcard() then 160 else 194 }
+		width: 60
+		height: 90
+		z index: 2
+		visible: { has_influenceg() and card.influenceg != "" }
+		render style: image
+		choice images:
+			default: influence_general.png
+
+extra card field:
+	type: choice
+	name: influence icon
+	editable: false
+	choice: default
+
+extra card style:
+	influence icon:
+		left: 74
+		top: { if is_avatar() and is_stage() then 330 else 300 }
+		width: 50
+		height: 75
+		z index: 2
+		visible: { has_influence() and	card.influence != "" }
+		render style: image
+		choice images:
+			default: influence.png
+
+extra card field:
+	type: choice
+	name: influence icon2
+	editable: false
+	choice: default
+
+extra card style:
+	influence icon2:
+		left: 79
+		top: { if is_dreamcard() then 420 else 375 }
+		width: 40
+		height: 65
+		z index: 2
+		visible: { has_influence2() and	card.influence2 != "" }
+		render style: image
+		choice images:
+			default: influence.png
+
+extra card field:
+	type: choice
+	name: sp icon
+	editable: false
+	choice: default
+
+extra card style:
+	sp icon:
+		left: { if is_site() then 72 else 61 }
+		top: 402
+		width: 70
+		height: 70
+		z index: 2
+		visible: { has_sp() and card.sp != "" }
+		render style: image
+		choice images:
+			default: sp.png
+
+extra card field:
+	type: choice
+	name: influence bracket icon
+	choice: Unrestricted
+	choice: Restricted
+
+extra card style:
+	influence bracket icon:
+		left: { if has_influence() then 62 else 1000 }
+		top: { if is_avatar() and is_stage() then 344 else 314 }
+		width: 70
+		height: 53
+		z index: 3
+		visible: { has_influence() and card.influence != "" }
+		render style: image
+		popup style: in place
+		choice images:
+			Unrestricted: empty.png
+			Restricted: restricted.png
+
+extra card field:
+	type: choice
+	name: influence bracket icon2
+	choice: Unrestricted
+	choice: Restricted
+
+extra card style:
+	influence bracket icon2:
+		left: { if has_influence2() then 65 else 1000 }
+		top: { if is_dreamcard() then 430 else 386 }
+		width: 70
+		height: 48
+		z index: 3
+		visible: { has_influence2() and card.influence2 != "" }
+		render style: image
+		popup style: in place
+		choice images:
+			Unrestricted: empty.png
+			Restricted: restricted2.png
+
+extra card field:
+	type: choice
+	name: challengedeckicon
+	editable: true
+	choice: default
+
+extra card style:
+	challengedeckicon:
+		left: { if is_site() then 646 else 650 }
+		top: { if is_site() then 766 else 787 }
+		width: 32
+		height: 32
+		z index: 1
+		visible: { not is_region() }
+		render style: image
+		choice images:
+			default: challengedeckicon.png
+
+extra card field:
+	type: choice
+	name: fw icon
+	editable: false
+	choice: default
+
+extra card style:
+	fw icon:
+		left: { if is_stage() and is_resource() then 64 else 1000 }
+		top: 542
+		width: 70
+		height: 80
+		z index: 2
+		visible: { card.fw != "" and is_stage() }
+		render style: image
+		choice images:
+			default: { if card.fw == "MG" then "mgstage.png" else if card.fw =="PA" then "pastage.png" else if card.fw =="GA" then "gastage.png" else if card.fw =="SA" then "sastage.png" else if card.fw =="AL" then "alstage.png" else if card.fw =="RA" then "rastage.png" else if card.fw =="wlk" then "wlkstage.png"}
