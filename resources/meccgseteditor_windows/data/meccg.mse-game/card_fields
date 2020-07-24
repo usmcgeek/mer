@@ -2,7 +2,9 @@
 ### Card Fields Go Here (Common Card Fields for all sets)
 ##################################################################
 
-#Background Image Selection Options
+##################################################################
+### Card Background Drop Down Menu Choices
+##################################################################
 card field:
 	type: choice
 	name: background
@@ -96,7 +98,7 @@ card field:
 	identifying: true
 	show statistics: false
 	description: Name
-card field:
+card field: #deprecated - for removal
 	type: text
 	name: cardnumber
 	identifying: false
@@ -109,7 +111,7 @@ card field:
 	show statistics: false
 	description: Challenge Deck Letter
 	script: if set.challengedeck != "" then set.challengedeck
-card field:
+card field: #deprecated - for removal
 	type: text
 	name: vc mark
 	identifying: true
@@ -125,20 +127,22 @@ card field:
 	name: region picture
 	show statistics: false
 	description: Art; double click to choose
+
+################################################Rules and Flavor Text - Normal Cards
 card field:
 	type: text
 	name: rules text
 	show statistics: false
+	script: text_filter(value)
 	multi line: true
 	description: Rules text
-	script: curly_quotes(card.rules_text)
 card field:
 	type: text
 	name: flavor text
 	show statistics: false
+	script: flavor_text_filter(value)
 	multi line: true
 	description: Flavor text
-	script: "<size:18><i>"+curly_quotes(card.flavor_text)+"</i></size>"
 card field:
 	type: text
 	name: text
@@ -147,6 +151,8 @@ card field:
 	multi line: true
 	script: combined_editor(field1: card.rules_text, separator: "<line>\n</line>", field2: card.flavor_text)
 	description: Text
+################################################################################
+
 card field:
 	type: text
 	name: mind

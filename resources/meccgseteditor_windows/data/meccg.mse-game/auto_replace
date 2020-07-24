@@ -56,3 +56,6 @@ auto replace:
 auto replace:
 	match: Anorien
 	replace: Anórien
+auto replace:
+	match: Anduril
+	replace: Andúril

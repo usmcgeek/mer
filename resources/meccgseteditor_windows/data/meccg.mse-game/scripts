@@ -1,3 +1,6 @@
+############################################################## Localization
+
+include file: language
 
 #############################################################Default matching
 	numbers_only := filter_rule(match: "[*+0-9-]")
@@ -30,6 +33,32 @@ card_count := {
 	number_of_items(in: set)
 }
 
-#Starting with M15, zero digits in card numbers should be shown up to three.
+#Zero digits in card numbers should be shown up to three.
 card_number_m15 := { (if card_number() < 100 then "0" else "") + (if card_number() < 10 then "0" else "") + card_number() }
 card_count_m15 := { (if card_count() < 100 then "0" else "") + (if card_count() < 10 then "0" else "") + card_count() }
+
+#######################################################################Spell Checking Filters
+text_filter :=
+	curly_quotes +
+	# Spellcheck
+	{ if set.mark_errors then
+		check_spelling(
+			language: language().spellcheck_code,
+			extra_dictionary: "/meccg.mse-game/meccg-words"
+		)
+	  else input
+	}
+
+flavor_text_filter :=
+	#Set Size and Italics
+	{ "<size:18><i>"+input+"</i></size>" } +
+	#Use Curly Quotes
+	curly_quotes +
+	# Spellcheck
+	{ if set.mark_errors then
+		check_spelling(
+			language: language().spellcheck_code,
+			extra_dictionary: "/meccg.mse-game/meccg-words"
+		)
+	  else input
+	}

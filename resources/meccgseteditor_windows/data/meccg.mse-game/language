@@ -1,0 +1,17 @@
+
+
+# Language specific strings
+languages := [
+	English: [
+		code              : "en",
+		spellcheck_code   : "en_us"
+	],
+	
+	Français: [
+		code              : "fr",
+		spellcheck_code   : "", # TODO: get dictionary
+	]
+]
+
+# The selected language
+language := { languages[set.card_language] or else language.English }

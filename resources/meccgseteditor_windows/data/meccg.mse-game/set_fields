@@ -41,6 +41,13 @@ set field:
 	name: mark errors
 	description: Marks errors on cards, for example wording and spelling errors, non unique card names, etc.
 set field:
+	type: choice
+	name: card language
+	description: Language for the cards
+	choice: English
+	choice: Français
+	initial: English
+set field:
 	type: info
 	name: Export specific values (leave blank if unsure)
 set field:
@@ -51,3 +58,12 @@ set field:
 	type: text
 	name: abbrev
 	description: Only used as a value for "abbrev" in XML (GCCG) export. Leave blank if unsure.
+
+#######################################################################
+
+default set style:
+	card language:
+		render style: both
+		choice images:
+			English:  /meccg.mse-game/icons/language-en.png
+			Français: /meccg.mse-game/icons/language-fr.png
