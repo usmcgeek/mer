@@ -46,6 +46,8 @@ set field:
 	description: Language for the cards
 	choice: English
 	choice: Français
+	choice: Deutsch
+	choice: Spanish
 	initial: English
 set field:
 	type: info
@@ -67,3 +69,5 @@ default set style:
 		choice images:
 			English:  /meccg.mse-game/icons/language-en.png
 			Français: /meccg.mse-game/icons/language-fr.png
+			Deutsch:  /meccg.mse-game/icons/language-de.png
+			Spanish:  /meccg.mse-game/icons/language-es.png

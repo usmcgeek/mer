@@ -9,8 +9,18 @@ languages := [
 	
 	Français: [
 		code              : "fr",
-		spellcheck_code   : "", # TODO: get dictionary
-	]
+		spellcheck_code   : "fr"
+	],
+	
+	Deutsch: [
+		code              : "de",
+		spellcheck_code   : "de_DE_frami"
+	],
+
+	Spanish: [
+		code              : "es",
+		spellcheck_code   : "es_ANY"
+	],
 ]
 
 # The selected language

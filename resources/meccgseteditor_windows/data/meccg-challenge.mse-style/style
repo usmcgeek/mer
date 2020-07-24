@@ -403,8 +403,8 @@ card style:
 			name: Times New Roman
 			#weight: bold
 			color: { if (is_minionhero() and is_agent() ) then rgb(0,0,0) else if is_minionhero() then rgb(255,255,255) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(0,0,0) else rgb(255,255,255)}
-			#size: { if is_item() then (40 - (length(card.mp) * 2)) else (40 - (length(card.mp) * 3)) }
-			size: 40
+			size: { if is_item() then (40 - (length(card.mp) * 2)) else (40 - (length(card.mp) * 3)) }
+			#size: 40
 			scale down to: 8
 	prowess:
 		left: { if has_diagonalprowess() then 45 else 800 }
@@ -418,8 +418,8 @@ card style:
 		font:
 			name: Times New Roman
 			color: rgb(255,255,255)
-			#size: { 32 - (length(card.prowess) + length(card.body)) }
-			size: 32
+			size: { 32 - (length(card.prowess) + length(card.body)) }
+			#size: 32
 			#weight: bold
 			scale down to: 8
 			separator color: rgb(200,0,0)
@@ -438,8 +438,8 @@ card style:
 		font:
 			name: Times New Roman
 			color: rgb(255,255,255)
-			#size: { 32 - (length(card.prowess) + length(card.body)) }
-			size: 32
+			size: { 32 - (length(card.prowess) + length(card.body)) }
+			#size: 32
 			#weight: bold
 			scale down to: 8
 			separator color: rgb(200,0,0)
@@ -458,8 +458,8 @@ card style:
 		font:
 			name: Times New Roman
 			color: rgb(255,255,255)
-			#size: { 32 - (length(card.prowess) + length(card.body)) }
-			size: 32
+			size: { 32 - (length(card.prowess) + length(card.body)) }
+			#size: 32
 			scale down to: 8
 			separator color: rgb(200,0,0)
 			shadow color: rgb(0,0,0)
@@ -476,8 +476,8 @@ card style:
 		font:
 			name: Times New Roman
 			color: rgb(255,255,255)
-			#size: { 32 - (length(card.prowess) + length(card.body)) }
-			size: 32
+			size: { 32 - (length(card.prowess) + length(card.body)) }
+			#size: 32
 			scale down to: 8
 			separator color: rgb(200,0,0)
 			shadow color: rgb(0,0,0)
@@ -623,8 +623,8 @@ extra card style:
 		width: 70
 		height: 63
 		z index: 2
-		#visible: { card.cp != "" and has_cp() }
-		visible: { card.cp != "" }
+		visible: { card.cp != "" and has_cp() }
+		#visible: { card.cp != "" }
 		render style: image
 		choice images:
 			default: { if is_minionhero() and is_character() then "cp_icon_hero_character.png" else if is_minionhero() then "cp_icon_hero.png" else if is_hero() and is_character() then "cp_icon_hero_character.png" else if is_minion() and is_character() then "cp_icon_minion_character.png" else if is_hazardagent() then "cp_icon_hazard.png" else if is_hazard() then "cp_icon_hazard.png" else if is_minion() then "cp_icon_minion.png" else if is_elflord() then "cp_icon_elflord.png" else if is_dwarflord() then "cp_icon_dwarflord.png" else if is_dragonlord() then "cp_icon_dragonlord.png" else if is_stage() then "cp_icon_stage.png" else "cp_icon_hero.png" }

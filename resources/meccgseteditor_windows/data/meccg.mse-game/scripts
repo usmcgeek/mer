@@ -39,7 +39,6 @@ card_count_m15 := { (if card_count() < 100 then "0" else "") + (if card_count() 
 
 #######################################################################Spell Checking Filters
 text_filter :=
-	curly_quotes +
 	# Spellcheck
 	{ if set.mark_errors then
 		check_spelling(
@@ -47,13 +46,10 @@ text_filter :=
 			extra_dictionary: "/meccg.mse-game/meccg-words"
 		)
 	  else input
-	}
+	} +
+	curly_quotes #after to avoid bad spellcheck
 
 flavor_text_filter :=
-	#Set Size and Italics
-	{ "<size:18><i>"+input+"</i></size>" } +
-	#Use Curly Quotes
-	curly_quotes +
 	# Spellcheck
 	{ if set.mark_errors then
 		check_spelling(
@@ -61,4 +57,7 @@ flavor_text_filter :=
 			extra_dictionary: "/meccg.mse-game/meccg-words"
 		)
 	  else input
-	}
+	} +
+	#Set Size and Italics
+	{ "<size:18><i>"+input+"</i></size>" } +
+	curly_quotes

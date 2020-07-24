@@ -2,6 +2,7 @@
 ############################################################
 ###Card Categorization Scripts
 ############################################################
+	#is_wizard := { contains(card.background, match: "wizard") }
 	is_region := { contains(card.background, match: "Region") }
 	is_regionvertical := { contains(card.background, match: "RegionVertical") }
 	is_regionhorizontal := { contains(card.background, match: "RegionHorizontal") }
@@ -37,3 +38,4 @@
 	has_sp := { (is_resource() and is_stage()) or (is_site() and is_stage()) or (is_hazard() and is_event()) or (is_minion() and is_resource()) }
 	has_home_site := { is_character() or is_avatar() or is_agent() }
 	has_diagonalprowess := { contains(card.background, match: "DiagonalPB") }
+	is_wizard := { contains(card.background, match: "wizard") }
