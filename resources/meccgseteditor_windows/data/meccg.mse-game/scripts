@@ -1,0 +1,35 @@
+
+#############################################################Default matching
+	numbers_only := filter_rule(match: "[*+0-9-]")
+	#symbols_only := filter_rule(match: "[?dDsSbBfFHKRwc]")
+	#sites_only := filter_text(match: "[DSBFHKR]", input: value)
+	
+
+############################################################## Card number
+
+# Process the name for sorting rules
+sort_name :=
+	# Remove "The", "A", and "And" at the beginning
+	replace@(match: "^(The|An?) ", replace: "") +
+	# Remove commas and apostrophes
+	replace@(match: "(,|'|’)", replace: "") +
+	# Remove bold and italic tags
+	replace@(match: "(<b>|<i>|</b>|</i>)", replace: "") +
+	# Make lowercase
+	to_lower
+
+
+card_number := {
+	position (
+		of: card
+		in: set
+		order_by: { sort_name(card.name) }
+	) + 1
+}
+card_count := {
+	number_of_items(in: set)
+}
+
+#Starting with M15, zero digits in card numbers should be shown up to three.
+card_number_m15 := { (if card_number() < 100 then "0" else "") + (if card_number() < 10 then "0" else "") + card_number() }
+card_count_m15 := { (if card_count() < 100 then "0" else "") + (if card_count() < 10 then "0" else "") + card_count() }

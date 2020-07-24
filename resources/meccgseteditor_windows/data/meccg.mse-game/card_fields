@@ -1,0 +1,343 @@
+##################################################################
+### Card Fields Go Here (Common Card Fields for all sets)
+##################################################################
+
+#Background Image Selection Options
+card field:
+	type: choice
+	name: background
+	card list name: Type
+	choice:
+		name: Hazard
+		choice: Agent
+		choice:
+			name: Agent
+			choice: Haz
+			choice: Minion
+		choice: Creature
+		choice: Creature DiagonalPB
+		choice: Event
+	choice:
+		name: Hero
+		choice: Ally
+		choice: Ally DiagonalPB
+		choice:
+			name: Avatar
+			choice: Alatar
+			choice: Gandalf
+			choice: Pallando
+			choice: Radagast
+			choice: Saruman
+		choice: Character
+		choice: Event
+		choice: Faction
+		choice: Item
+		choice: Item DiagonalPB
+		choice: Site
+	choice:
+		name: Minion
+		choice: Ally
+		choice: Ally DiagonalPB
+		choice:
+			name: Avatar
+			choice: Balrog
+			choice: Ringwraith
+		choice: Character
+		choice: MECA Character
+		choice: Event
+		choice: Faction
+		choice: Item
+		choice: Item DiagonalPB
+		choice:
+			name: Site
+			choice: Balrog
+			choice: Minion
+	choice:
+		name: Region
+		choice: RegionVertical
+		choice: RegionHorizontal
+	choice:
+		name: MinionHero
+		choice: Ally
+		choice: Ally DiagonalPB
+		choice: Character
+		choice: Event
+		choice: Faction
+		choice: Grey Agent
+		choice: Item
+		choice: Item DiagonalPB
+		choice: Site
+	choice:
+		name: Stage
+		choice: Ally
+		choice: Ally DiagonalPB
+		choice:
+			name: Avatar
+			choice: Dunadanlord
+			choice: Manlord
+			choice: Elflord
+			choice: Dwarflord
+			choice: Alatar
+			choice: Gandalf
+			choice: Pallando
+			choice: Radagast
+			choice: Saruman
+			choice: Dragonlord
+		choice: Event
+		choice: Faction
+		choice: Item
+		choice: Item DiagonalPB
+		choice: Site
+	description: Type
+
+card field:
+	type: text
+	name: name
+	identifying: true
+	show statistics: false
+	description: Name
+card field:
+	type: text
+	name: cardnumber
+	identifying: false
+	show statistics: false
+	description: Cardnumber
+card field:
+	type: text
+	name: challengedeck
+	identifying: false
+	show statistics: false
+	description: Challenge Deck Letter
+	script: if set.challengedeck != "" then set.challengedeck
+card field:
+	type: text
+	name: vc mark
+	identifying: true
+	show statistics: false
+	description: virtual card mark
+card field:
+	type: image
+	name: picture
+	show statistics: false
+	description: Art; double click to choose
+card field:
+	type: image
+	name: region picture
+	show statistics: false
+	description: Art; double click to choose
+card field:
+	type: text
+	name: rules text
+	show statistics: false
+	multi line: true
+	description: Rules text
+	script: curly_quotes(card.rules_text)
+card field:
+	type: text
+	name: flavor text
+	show statistics: false
+	multi line: true
+	description: Flavor text
+	script: "<size:18><i>"+curly_quotes(card.flavor_text)+"</i></size>"
+card field:
+	type: text
+	name: text
+	show statistics: false
+	save value: false
+	multi line: true
+	script: combined_editor(field1: card.rules_text, separator: "<line>\n</line>", field2: card.flavor_text)
+	description: Text
+card field:
+	type: text
+	name: mind
+	script: numbers_only(value)
+	card list visible: true
+	description: Mind
+card field:
+	type: text
+	name: sp
+	script: numbers_only(value)
+	description: Stage poins
+card field:
+	type: text
+	name: playable
+	#script: symbols_only(value)
+	multi line: true
+	description: Playable (use symbols dDsSbBfFHKRwc)
+	#script : "<sym>"+card.playable+"</sym>"
+card field:
+	type: text
+	name: region type
+	#script: symbols_only(value)
+	multi line: true
+	description: Playable (use symbols dDsSbBfFHKRwc)
+	#script : "<sym>"+card.playable+"</sym>"
+card field:
+	type: text
+	name: mp
+	#script: numbers_only(value)
+	description: Marshalling points
+card field:
+	type: text
+	name: influence
+	script: numbers_only(value)
+	description: Direct influence
+card field:
+	type: text
+	name: influence2
+	script: numbers_only(value)
+	description: Direct influence
+card field:
+	type: text
+	name: influencep
+	script: numbers_only(value)
+	description: Direct influence with []
+card field:
+	type: text
+	name: influenceg
+	script: numbers_only(value)
+	description: General Influence FW Avatar
+card field:
+	type: text
+	name: class
+	description: Class
+card field:
+	type: text
+	name: artist
+	#script: combined_editor ( prefix: "Art by ", field1: card.artist_combined )
+	default: "<prefix>Art by </prefix>"
+	description: Artist
+card field:
+	type: text
+	name: random
+	description: Random value
+	script: random_int(begin:1, end:7) + random_int(begin:1, end:7)
+card field:
+	type: text
+	name: set
+	description: Set
+	#default: "k"
+	script: if set.symbol != "" then set.symbol else "k"
+card field:
+	type: text
+	name: copyright
+	description: Copyright
+	script: if set.copyright != "" then set.copyright else ""
+card field:
+	type: text
+	name: cp
+	description: Corruption
+	default: ""
+card field:
+	type: text
+	name: prowess
+	description: Prowess
+card field:
+	type: text
+	name: body
+	description: Body
+card field:
+	type: text
+	name: pb
+	save value: false
+	script:
+		combined_editor(
+			field1: card.prowess,
+			separator: "/",
+			field2: card.body,
+			soft_before_empty: true,
+			hide_when_empty:	 true
+		)
+	card list visible: false
+	description: Prowess/Body
+	show statistics: false
+card field:
+	type: text
+	name: prowess body separator
+	editable: false
+	default: "<prefix>/</prefix>"
+	description: PB Separator
+card field:
+	type: choice
+	name: rarity
+	description: Rarity
+	choice: C
+	choice: U
+	choice: R
+	choice: P
+card field:
+	type: text
+	name: home site
+	multi line: true
+	default: "<prefix><b>Home Site:</b> </prefix>"
+	description: Home site
+card field:
+	type: choice
+	name: fw
+	description: Fallen Wizard
+	choice:
+	choice: MG
+	choice: PA
+	choice: SA
+	choice: GA
+	choice: RA
+	choice: AL
+	choice: wlk
+
+##################################################################
+### Site Card Specific Fields
+##################################################################
+card field:
+	type: text
+	name: site type
+	description: Site type
+	#script: sites_only(value)
+	#script: "<sym>"+card.site_type+"</sym>"
+card field:
+	type: text
+	name: site path
+	multi line: true
+	description: Site path
+	#script : "<sym>"+card.site_path+"</sym>"
+card field:
+	type: text
+	name: draw
+	script: numbers_only(value)
+	description: Draw
+card field:
+	type: text
+	name: draw opp
+	script: numbers_only(value)
+	description: Opponent Draw
+card field:
+	type: text
+	name: haven
+	multi line: true
+	default: "<b><i>Nearest Haven:</i></b> "
+	description: Nearest haven
+card field:
+	type: text
+	name: site playable
+	multi line: true
+	default: "<b><i>Playable:</i></b> "
+	description: Playable
+card field:
+	type: text
+	name: auto attack
+	multi line: true
+	default: "<b><i>Automatic-attacks:</i></b> "
+	description: Automatic-attacks
+card field:
+	type: text
+	name: special
+	multi line: true
+	default: "<b><i>Special:</i></b> "
+	description: Special
+card field:
+	type: text
+	name: site text
+	show statistics: false
+	save value: false
+	multi line: true
+	script: combined_editor( field1: card.haven, separator1: "<line>\n</line>", field2: card.site_playable, separator2: "<line>\n</line>", field3: card.auto_attack, separator3: "<line>\n</line>", field4: card.special )
+	description: Text

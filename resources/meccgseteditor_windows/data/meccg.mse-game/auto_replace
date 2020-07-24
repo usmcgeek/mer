@@ -1,0 +1,58 @@
+################################################################## Automatic Text Replacements
+auto replace:
+	match: (C)
+	replace: ©
+auto replace:
+	match: (c)
+	replace: ©
+auto replace:
+	match: CR
+	replace: ©
+auto replace:
+	match: TM
+	replace: ™
+	whole word: true
+auto replace:
+	match: --
+	replace: —
+auto replace:
+	match: ---
+	replace: —
+auto replace:
+	match: ::
+	replace: •
+	
+#############################Special Characters
+auto replace:
+	match: Lorien
+	replace: Lórien
+auto replace:
+	match: Burat
+	replace: Bûrat
+auto replace:
+	match: Nazgul
+	replace: Nazgûl
+auto replace:
+	match: Dunadan
+	replace: Dúnadan
+auto replace:
+	match: Tuma
+	replace: Tûma
+auto replace:
+	match: Wuluag
+	replace: Wûluag
+auto replace:
+	match: Adunaphel
+	replace: Adûnaphel
+auto replace:
+	match: Ulund
+	replace: Ûlund
+auto replace:
+	match: Akhorahil
+	replace: Akhôrahil
+auto replace:
+	match: Palantir
+	replace: Palantír
+auto replace:
+	match: Anorien
+	replace: Anórien

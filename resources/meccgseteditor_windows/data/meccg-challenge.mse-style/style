@@ -30,43 +30,13 @@ card dpi: 300
 
 ############################################################ Style Scripts
 init script:
-	is_region := { contains(card.background, match: "Region") }
-	is_regionvertical := { contains(card.background, match: "RegionVertical") }
-	is_regionhorizontal := { contains(card.background, match: "RegionHorizontal") }
-	is_hazard := { contains(card.background, match: "Hazard") }
-	is_hero := { contains(card.background, match: "Hero") }
-	is_minionhero := { contains(card.background, match: "MinionHero") }
-	is_minion := { contains(card.background, match: "Minion") and not contains(card.background, match: "Balrog") }
-	is_stage := { contains(card.background, match: "Stage") }
-	is_ally := { contains(card.background, match: "Ally") }
-	is_avatar := { contains(card.background, match: "Avatar") }
-	is_character := { contains(card.background, match: "Character") }
-	is_agent := { contains(card.background, match: "Agent") }
-	is_hazardagent := { contains(card.background, match: "Haz") }
-	is_creature := { contains(card.background, match: "Creature") }
-	is_site := { contains(card.background, match: "Site") }
-	is_event := { contains(card.background, match: "Event") }
-	is_item := { contains(card.background, match: "Item") }
-	is_resource := { not is_character() and not is_site() and not is_hazard() and not is_avatar() }
-	is_balrog := { contains(card.background, match: "Avatar Balrog") }
-	is_ringwraith := { contains(card.background, match: "Ringwraith") }
-	is_fallenwizard := { not is_dreamcard() and is_avatar() and is_stage() }
-	is_dreamcard := { contains(card.background, match: "lord") }
-	is_elflord := { contains(card.background, match: "Elflord") }
-	is_dragonlord := { contains(card.background, match: "Dragonlord") }
-	is_dwarflord := { contains(card.background, match: "Dwarflord") }
-	is_manlord := { contains(card.background, match: "Manlord") }
-	is_Dunadanlord := { contains(card.background, match: "Dunadanlord") }
-	has_cp := { is_character() or is_event() or is_item() or is_dreamcard() }
-	has_mind := { not is_region() or is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) or is_dreamcard() }
-	has_influence := { is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) }
-	has_influence2 := { is_dreamcard() or (not is_stage() and is_resource() and is_item()) }
-	has_influenceg := { (is_avatar() and is_stage()) or (is_stage() and is_event()) }
-	has_sp := { (is_resource() and is_stage()) or (is_site() and is_stage()) or (is_hazard() and is_event()) or (is_minion() and is_resource()) }
-	has_home_site := { is_character() or is_avatar() or is_agent() }
-	has_diagonalprowess := { contains(card.background, match: "DiagonalPB") }
+	#Load Common Style Script for Card Categories
+	include file: /meccg.mse-game/card_style_scripts
+
 
 ############################################################ Card Fields
+
+#Background Image Chooser
 card style:
 	background:
 		left: 0
@@ -136,6 +106,8 @@ card style:
 			Stage Item: stage_item.png
 			Stage Item DiagonalPB: stage_item.png
 			Stage Site: stage_site.png
+
+###################Card Name###########################
 	name:
 		left: {if is_regionvertical() then 85 else if is_regionhorizontal() then 660 else 167}
 		top: { if is_site() then 76 else if is_regionvertical() then 77 else if is_regionhorizontal() then 380 else 70 }
@@ -154,6 +126,8 @@ card style:
 			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0) else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
 			shadow displacement x: 2
 			shadow displacement y: 2
+			
+#####################Text Box########################
 	text:
 		left: { if is_hazard() then 93 else if is_regionvertical() then 147 else if is_regionhorizontal() then 150 else if not is_site() then 96 else 2000 }
 		top: { if is_regionvertical() then 876 else if is_regionhorizontal() then 130 else if not is_site() then 658 else 2000 }
@@ -180,6 +154,8 @@ card style:
 		line height hard: 1.3
 		line height line: 1.1
 		mask: mask_text.png
+
+##############################Flavor Text##################
 	flavor text:
 		font:
 			name: Times New Roman
@@ -187,6 +163,8 @@ card style:
 			size: 18
 			scale down to: 12
 		padding top:		2
+
+##################################Region and Site Stuff##################
 	region type:
 		left: { if is_regionhorizontal() then 254 else 78 }
 		top: { if is_regionhorizontal() then 70 else 785 }
@@ -225,6 +203,8 @@ card style:
 		line height hard: 1.3
 		line height line: 1.1
 		mask: mask_site.png
+
+#########################Card Image Placements###############################
 	picture:
 		left: { if is_site() then 145 else if is_region() then 2000 else 136 }
 		top: { if is_site() then 145 else if is_region() then 2000 else 142 }
@@ -239,6 +219,8 @@ card style:
 		height: 1050
 		visible: { is_region() }
 		mask: { if is_regionvertical() then "region_vertical_mask.png" else if is_regionhorizontal() then "region_horizontal_mask.png" }
+
+#########################Creature Site Icons###################################
 	playable:
 		left: { if is_creature() then 73 else 1000 }
 		top: { if is_creature() then 163 else 2000 }
@@ -259,6 +241,8 @@ card style:
 			size: 36
 			alignment: middle center
 		direction: top to bottom
+
+#####################Site Card Icon#############################
 	site type:
 		left: { if is_site() then 75 else 1000 }
 		top: { if is_site() then 70 else 1000 }
@@ -278,6 +262,8 @@ card style:
 			name: meccghq-icons
 			size: 40
 			alignment: middle center
+
+###################Site Card Paths##############################
 	site path:
 		left: { if is_site() then 83 else 1000 }
 		top: { if is_site() then 180 else 1000 }
@@ -528,8 +514,8 @@ card style:
 			scale down to: 8
 	copyright:
 		left: { if is_regionvertical() then 375 else if is_regionhorizontal() then 600 else 130 }
-		top: { if is_site() then 980 else if is_regionvertical() then 140 else if is_regionhorizontal() then 600 else 992 }
-		width: 450
+		top: { if is_site() then 980 else if is_regionvertical() then 140 else if is_regionhorizontal() then 600 else 994 }
+		width: 400
 		height: 22
 		z index: 1
 		angle: { if is_regionhorizontal() then -90 else 0 }
@@ -621,6 +607,7 @@ card style:
 			name: MECCGBold
 			color: rgb(0,0,0)
 			size: 18
+
 
 ############################################################ Extra Card Fields
 extra card field:
@@ -776,6 +763,25 @@ extra card style:
 
 extra card field:
 	type: choice
+	name: fw icon
+	editable: false
+	choice: default
+
+extra card style:
+	fw icon:
+		left: { if is_stage() and is_resource() then 64 else 1000 }
+		top: 542
+		width: 70
+		height: 80
+		z index: 2
+		visible: { card.fw != "" and is_stage() }
+		render style: image
+		choice images:
+			default: { if card.fw == "MG" then "mgstage.png" else if card.fw =="PA" then "pastage.png" else if card.fw =="GA" then "gastage.png" else if card.fw =="SA" then "sastage.png" else if card.fw =="AL" then "alstage.png" else if card.fw =="RA" then "rastage.png" else if card.fw =="wlk" then "wlkstage.png"}
+
+####################################################Challenge Deck Fields
+extra card field:
+	type: choice
 	name: challengedeckicon
 	editable: true
 	choice: default
@@ -792,20 +798,33 @@ extra card style:
 		choice images:
 			default: challengedeckicon.png
 
+############################################################## Extra card fields for Numbering
 extra card field:
-	type: choice
-	name: fw icon
-	editable: false
-	choice: default
-
+	type: text
+	name: card code
+	save value: false
+	script:
+		if set.automatic_card_numbers then
+			forward_editor(prefix: card_number_m15() + "/" + card_count_m15(), field: card.card_code_text)
+#		else
+#			combined_editor(field1: card.custom_card_number, field2: card.card_code_text)
 extra card style:
-	fw icon:
-		left: { if is_stage() and is_resource() then 64 else 1000 }
-		top: 542
+	card code:
+		left: { if is_regionvertical() then 375 else if is_regionhorizontal() then 600 else 550 }
+		top: { if is_site() then 980 else if is_regionvertical() then 140 else if is_regionhorizontal() then 600 else 994 }
 		width: 70
-		height: 80
-		z index: 2
-		visible: { card.fw != "" and is_stage() }
-		render style: image
-		choice images:
-			default: { if card.fw == "MG" then "mgstage.png" else if card.fw =="PA" then "pastage.png" else if card.fw =="GA" then "gastage.png" else if card.fw =="SA" then "sastage.png" else if card.fw =="AL" then "alstage.png" else if card.fw =="RA" then "rastage.png" else if card.fw =="wlk" then "wlkstage.png"}
+		height: 22
+		z index: 1
+		visible: { if set.automatic_card_numbers then "yes" }
+		angle: { if is_regionhorizontal() then -90 else 0 }
+		alignment: left
+		font:
+			name: Arial
+			#color: { if is_hero() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_region() then rgb(0,0,0) else rgb(255,255,255) }
+			weight: bold
+			size: 13
+			scale down to: 6
+			shadow color: { if is_region() then rgb(255,255,255) else rgb(0,0,0) }
+			shadow displacement x: 1
+			shadow displacement y: 1

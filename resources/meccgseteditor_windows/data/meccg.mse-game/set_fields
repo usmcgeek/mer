@@ -1,0 +1,53 @@
+################################################################## Set fields
+set field:
+	type: info
+	name: Set information
+set field:
+	type: text
+	name: name
+	identifying: true
+	description: Set full display name
+set field:
+	type: text
+	name: author
+	description: Set author
+set field:
+	type: text
+	name: notes
+	multi line: true
+	description: Additional notes
+set field:
+	type: info
+	name: Default values
+set field:
+	type: text
+	name: challengedeck
+	description: Challenge Deck Letter
+set field:
+	type: text
+	name: symbol
+	description: Default set symbol (one letter or Space, displayed as a Cirth rune on the lower right)
+set field:
+	type: text
+	name: copyright
+	description: Default copyright line (type (C) to insert a copyright symbol)
+set field:
+	type: boolean
+	name: automatic card numbers
+	description: Should card numbers be shown on the cards?
+	initial: no
+set field:
+	type: boolean
+	name: mark errors
+	description: Marks errors on cards, for example wording and spelling errors, non unique card names, etc.
+set field:
+	type: info
+	name: Export specific values (leave blank if unsure)
+set field:
+	type: text
+	name: dir
+	description: Only used as a value for "dir" in XML (GCCG) export. Leave blank if unsure.
+set field:
+	type: text
+	name: abbrev
+	description: Only used as a value for "abbrev" in XML (GCCG) export. Leave blank if unsure.
