@@ -1,6 +1,6 @@
 # Middle Earth Remastered Repo
 
-##Notes:
+## Notes:
  * SetEditor in \resources\meccgseteditor_windows
  * Note - while this is compatible with normal magicseteditor, you will not get full resolution with the normal one.
    Use the editor here for full resolution support. Regular magicseteditor forces everything down to 150dpi max.
@@ -9,15 +9,16 @@
  * Make sure to install fonts
  * The game files for the data directory are updated often with improvements.
 
-##Features
+## Features
  * Check "Set Fields" for options
  * Auto card numbering will add card numbers by name. Format is 001/001 (number/total)
- *Spell check added, and custom dictionary to match Tolkien words (quotes cause error atm)
+ * Spell check added, and custom dictionary to match Tolkien words (quotes cause error atm)
+   To control spell check, use the "mark errors" option.
  * Added support for French, German, and Spanish spell check dictionaries
  * Auto-replace to add special characters (fix Dunadan, Nazgul, etc, automatically)
 
 
-##25 July 2020
+## 25 July 2020
  * Reuploaded completed sets and images with corrections
  * Updated data files (added custom meccg word list for english, french, spanish, and german)
  * Updated Auto Replace with more words
@@ -28,7 +29,7 @@
  * Added spell checking to Name fields and Site Cards
 
 
-##24 July 2020
+## 24 July 2020
  * Added Spellchecking to data files
  * Working on Tolkien Word List
  * Updating Auto replace for special characters ("Lorien" auto to "Lórien" and etc)
