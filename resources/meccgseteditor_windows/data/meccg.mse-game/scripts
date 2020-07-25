@@ -44,7 +44,7 @@ text_filter :=
 		match: "--"
 		replace: "—"
 	) +
-	#Add CvCC Icon from Brackets
+	#Add CvCC Icon from Brackets ##NOT WORKING STILL - WHY?
 	replace@(
 		match: "\\[[CvCC/|]+\\]",
 		replace: {"<sym>" + input + "</sym>"} ) +
@@ -76,16 +76,21 @@ text_filter :=
 	replace@(
 		match: "\\[[CP/|]+\\]",
 		replace: {"<sym>" + input + "</sym>"} ) +
-	#Format site icon brackets (no italics)
+##################################################
+##Replaces to remove italics from brackets - works but
+##stops all italics after brackets no matter what.  Needs more work
+##################################################
+#	#Format site icon brackets (no italics)
 #	replace@(
-#		match: ("[")
-#		replace: ("</i>"+"["+"<i>")
+#		match: ("\\[")
+#		replace: "</i-auto>&<i-auto>"
 #	) +
-	#Format site icon brackets (no italics)
+#	#Format site icon brackets (no italics)
 #	replace@(
-#		match: ("]")
-#		replace: ("</i>"+"]"+"<i>")
+#		match: ("\\]")
+#		replace: "</i-auto>&<i-auto>"
 #	) +
+#################################################
 	# Spellcheck
 	{ if set.mark_errors then
 		check_spelling(
@@ -108,3 +113,32 @@ flavor_text_filter :=
 	#Set Size and Italics
 	{ "<size:18><i>"+input+"</i></size>" } +
 	curly_quotes
+
+site_text_filter :=
+	#Replace double dash to long dash
+	replace@(
+		match: "--"
+		replace: "—"
+		) +
+	#Add Site Icons from Brackets
+	replace@(
+		match: "\\[[wcfbsdHFBRSDKejP/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	# Spellcheck
+	{ if set.mark_errors then
+		check_spelling(
+			language: language().spellcheck_code,
+			extra_dictionary: "/meccg.mse-game/meccg-words"
+		)
+	  else input
+	}
+
+title_text_filter :=
+	# Spellcheck
+	{ if set.mark_errors then
+		check_spelling(
+			language: language().spellcheck_code,
+			extra_dictionary: "/meccg.mse-game/meccg-words"
+		)
+	  else input
+	}
