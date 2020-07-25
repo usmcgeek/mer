@@ -6,7 +6,7 @@ include file: language
 	numbers_only := filter_rule(match: "[*+0-9-]")
 	#symbols_only := filter_rule(match: "[?dDsSbBfFHKRwc]")
 	#sites_only := filter_text(match: "[DSBFHKR]", input: value)
-	
+
 
 ############################################################## Card number
 
@@ -39,6 +39,53 @@ card_count_m15 := { (if card_count() < 100 then "0" else "") + (if card_count() 
 
 #######################################################################Spell Checking Filters
 text_filter :=
+	#Replace double dash to long dash
+	replace@(
+		match: "--"
+		replace: "—"
+	) +
+	#Add CvCC Icon from Brackets
+	replace@(
+		match: "\\[[CvCC/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add Site Icons from Brackets
+	replace@(
+		match: "\\[[wcfbsdHFBRSDKejP/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add tap Icon from Brackets
+	replace@(
+		match: "\\[[tap/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add MP Icon from Brackets
+	replace@(
+		match: "\\[[mp/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add General Influence Icon from Brackets
+	replace@(
+		match: "\\[[GI/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add Direct Influnce Icon from Brackets
+	replace@(
+		match: "\\[[EI/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add Corruption Check Icon from brackets
+	replace@(
+		match: "\\[[CC/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Add Corruption Icon from brackets
+	replace@(
+		match: "\\[[CP/|]+\\]",
+		replace: {"<sym>" + input + "</sym>"} ) +
+	#Format site icon brackets (no italics)
+#	replace@(
+#		match: ("[")
+#		replace: ("</i>"+"["+"<i>")
+#	) +
+	#Format site icon brackets (no italics)
+#	replace@(
+#		match: ("]")
+#		replace: ("</i>"+"]"+"<i>")
+#	) +
 	# Spellcheck
 	{ if set.mark_errors then
 		check_spelling(

@@ -108,9 +108,6 @@ auto replace:
 	match:	Hoarmurath
 	replace:	Hoarmûrath
 auto replace:	
-	match:	Dir
-	replace:	Dír
-auto replace:	
 	match:	Druadan
 	replace:	Drúadan
 auto replace:	
@@ -132,14 +129,8 @@ auto replace:
 	match:	Ringlo
 	replace:	Ringló
 auto replace:	
-	match:	dur
-	replace:	dûr
-auto replace:	
 	match:	Nurn
 	replace:	Nûrn
-auto replace:	
-	match:	Udun
-	replace:	Ûdun
 auto replace:	
 	match:	Oin
 	replace:	Óin
@@ -242,3 +233,142 @@ auto replace:
 auto replace:	
 	match:	Grishnakh
 	replace:	Grishnákh
+auto replace:		
+	match:	Arinmir
+	replace:	Arinmîr
+auto replace:		
+	match:	Barad-dur
+	replace:	Barad-dûr
+auto replace:		
+	match:	Ghan-buri-Ghan
+	replace:	Ghán-buri-Ghán
+auto replace:		
+	match:	Mumak
+	replace:	Mûmak
+auto replace:		
+	match:	Roac
+	replace:	Roäc
+auto replace:		
+	match:	Udun
+	replace:	Udûn
+auto replace:		
+	match:	Voteli
+	replace:	Vôteli
+auto replace:		
+	match:	Thrain
+	replace:	Thráin
+auto replace:		
+	match:	Rhun
+	replace:	Rhûn
+auto replace:		
+	match:	Dasakun
+	replace:	Dâsakûn
+auto replace:		
+	match:	Dror
+	replace:	Drór
+auto replace:		
+	match:	Elerina
+	replace:	Elerína
+auto replace:		
+	match:	Juoma
+	replace:	Jûoma
+auto replace:		
+	match:	Om-buri-Om
+	replace:	Ôm-buri-Ôm
+auto replace:		
+	match:	Pon-ora-Pon
+	replace:	Pôn-ora-Pôn
+auto replace:		
+	match:	Raisha
+	replace:	Râisha
+auto replace:		
+	match:	Surion
+	replace:	Súrion
+auto replace:		
+	match:	Haudh-in-Gwanur
+	replace:	Haudh-in-Gwanûr
+auto replace:		
+	match:	Baugur
+	replace:	Baugúr
+auto replace:		
+	match:	Broin
+	replace:	Bróin
+auto replace:		
+	match:	Dogrib
+	replace:	Dôgrib
+auto replace:		
+	match:	Grishnakh
+	replace:	Grishnákh
+auto replace:		
+	match:	Nain
+	replace:	Náin
+auto replace:		
+	match:	Shamas
+	replace:	Shámas
+auto replace:		
+	match:	Nurniag
+	replace:	Nûrniag
+auto replace:		
+	match:	Mauhur
+	replace:	Mauhûr
+auto replace:		
+	match:	Mionid
+	replace:	Míonid
+auto replace:		
+	match:	Nuriags
+	replace:	Nûriags
+auto replace:		
+	match:	Orome
+	replace:	Oromë
+auto replace:		
+	match:	Hyvat
+	replace:	Hyvät
+auto replace:		
+	match:	Kylmatalo
+	replace:	Kylmätalo
+auto replace:		
+	match:	Dum
+	replace:	Dûm
+auto replace:		
+	match:	Smod
+	replace:	Smôd
+auto replace:		
+	match:	Mirlond
+	replace:	Mírlond
+auto replace:		
+	match:	Oronin
+	replace:	Oronín
+auto replace:		
+	match:	Luthien
+	replace:	Lúthien
+auto replace:		
+	match:	Lugburz
+	replace:	Lugbúrz
+auto replace:		
+	match:	Bavor
+	replace:	Bávor
+auto replace:		
+	match:	Druin
+	replace:	Drúin
+auto replace:		
+	match:	Dwalin
+	replace:	Dwálin
+auto replace:		
+	match:	Thelor
+	replace:	Thélor
+auto replace:		
+	match:	Thrar
+	replace:	Thrár
+auto replace:		
+	match:	Duath
+	replace:	Dûath
+auto replace:		
+	match:	of Dir
+	replace:	of Dír
+auto replace:		
+	match:	Palando
+	replace:	Pallando
+auto replace:		
+	match:	Radgast
+	replace:	Radagast
+
