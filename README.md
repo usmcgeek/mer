@@ -34,3 +34,9 @@
  * Working on Tolkien Word List
  * Updating Auto replace for special characters ("Lorien" auto to "Lórien" and etc)
  * Reorganized scripts and setup common include files
+
+## To Do List
+ * Add different backgrounds for Elf Lords
+ * Add different backgrounds for Dwarf Lords
+ * Add set icon field for custom icons
+ * Create cool custom templates and/or watermarked, etc for fun!
