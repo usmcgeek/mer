@@ -27,6 +27,9 @@ auto replace:
 	match: Lorien
 	replace: Lórien
 auto replace:
+	match: lorien
+	replace: Lórien
+auto replace:
 	match: Burat
 	replace: Bûrat
 auto replace:
@@ -34,9 +37,12 @@ auto replace:
 	replace: Nazgûl
 auto replace:
 	match: nazgul
-	replace: nazgûl
+	replace: Nazgûl
 auto replace:
 	match: Dunadan
+	replace: Dúnadan
+auto replace:
+	match: dunadan
 	replace: Dúnadan
 auto replace:
 	match: Tuma
@@ -54,11 +60,185 @@ auto replace:
 	match: Akhorahil
 	replace: Akhôrahil
 auto replace:
-	match: Palantir
-	replace: Palantír
-auto replace:
 	match: Anorien
 	replace: Anórien
 auto replace:
 	match: Anduril
 	replace: Andúril
+auto replace:	
+	match:	Palantiri
+	replace:	Palantíri
+auto replace:	
+	match:	palantiri
+	replace:	Palantíri
+auto replace:	
+	match:	Dunedain
+	replace:	Dúnedain
+auto replace:	
+	match:	dunedain
+	replace:	Dúnedain
+auto replace:	
+	match:	Cirdan
+	replace:	Círdan
+auto replace:	
+	match:	Pukel
+	replace:	Pûkel
+auto replace:	
+	match:	Dain
+	replace:	Dáin
+auto replace:	
+	match:	Eomer
+	replace:	Éomer
+auto replace:	
+	match:	Eomund
+	replace:	Éomund
+auto replace:	
+	match:	Eowyn
+	replace:	Éowyn
+auto replace:	
+	match:	Fili
+	replace:	Fíli
+auto replace:	
+	match:	Theoden
+	replace:	Théoden
+auto replace:	
+	match:	Hama
+	replace:	Háma
+auto replace:	
+	match:	Hoarmurath
+	replace:	Hoarmûrath
+auto replace:	
+	match:	Dir
+	replace:	Dír
+auto replace:	
+	match:	Druadan
+	replace:	Drúadan
+auto replace:	
+	match:	Indur
+	replace:	Indûr
+auto replace:	
+	match:	Khamul
+	replace:	Khamûl
+auto replace:	
+	match:	Kili
+	replace:	Kíli
+auto replace:	
+	match:	Nain
+	replace:	Náin
+auto replace:	
+	match:	Duath
+	replace:	Dúath
+auto replace:	
+	match:	Ringlo
+	replace:	Ringló
+auto replace:	
+	match:	dur
+	replace:	dûr
+auto replace:	
+	match:	Nurn
+	replace:	Nûrn
+auto replace:	
+	match:	Udun
+	replace:	Ûdun
+auto replace:	
+	match:	Oin
+	replace:	Óin
+auto replace:	
+	match:	Gloin
+	replace:	Glóin
+auto replace:	
+	match:	Ugluk
+	replace:	Uglûk
+auto replace:	
+	match:	Sul
+	replace:	Sûl
+auto replace:	
+	match:	Annuminas
+	replace:	Annúminas
+auto replace:	
+	match:	Annun
+	replace:	Annûn
+auto replace:	
+	match:	Voronwe
+	replace:	Voronwë
+auto replace:	
+	match:	Osse
+	replace:	Ossë
+auto replace:	
+	match:	Uvatha
+	replace:	Ûvatha
+auto replace:	
+	match:	Buthrakaur
+	replace:	Bûthrakaur
+auto replace:	
+	match:	Turin
+	replace:	Túrin
+auto replace:	
+	match:	Cuthalion
+	replace:	Cúthalion
+auto replace:	
+	match:	Iomin
+	replace:	lómin
+auto replace:	
+	match:	Gror
+	replace:	Grór
+auto replace:	
+	match:	Elured
+	replace:	Eluréd
+auto replace:	
+	match:	Eluin
+	replace:	Eluín
+auto replace:	
+	match:	dum
+	replace:	dûm
+auto replace:	
+	match:	Morlat
+	replace:	Môrlat
+auto replace:	
+	match:	fana
+	replace:	fána
+auto replace:	
+	match:	Earcaraxe
+	replace:	Eärcaraxë
+auto replace:	
+	match:	Numeriador
+	replace:	Númeriador
+auto replace:	
+	match:	lossaloki
+	replace:	lossalóki
+auto replace:	
+	match:	kemenloki
+	replace:	kemenlóki
+auto replace:	
+	match:	kalaloki
+	replace:	kalalóki
+auto replace:	
+	match:	hiswaloki
+	replace:	hiswalóki
+auto replace:	
+	match:	Nenselde
+	replace:	Nenseldë
+auto replace:	
+	match:	neniloki
+	replace:	nénilóki
+auto replace:	
+	match:	Thror
+	replace:	Thrór
+auto replace:	
+	match:	Smeagol
+	replace:	Sméagol
+auto replace:	
+	match:	helkaloki
+	replace:	helkalóki
+auto replace:	
+	match:	Numenorean
+	replace:	Númenórean
+auto replace:	
+	match:	Numenor
+	replace:	Númenor
+auto replace:	
+	match:	Grima
+	replace:	Gríma
+auto replace:	
+	match:	Grishnakh
+	replace:	Grishnákh
