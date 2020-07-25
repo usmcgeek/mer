@@ -97,6 +97,7 @@ card field:
 	name: name
 	identifying: true
 	show statistics: false
+	script: title_text_filter(value)
 	description: Name
 card field: #deprecated - for removal
 	type: text
@@ -315,29 +316,34 @@ card field:
 	name: draw opp
 	script: numbers_only(value)
 	description: Opponent Draw
+#######################Site Card Main Text Box
 card field:
 	type: text
 	name: haven
 	multi line: true
 	default: "<b><i>Nearest Haven:</i></b> "
+	script: site_text_filter(value)
 	description: Nearest haven
 card field:
 	type: text
 	name: site playable
 	multi line: true
 	default: "<b><i>Playable:</i></b> "
+	script: site_text_filter(value)
 	description: Playable
 card field:
 	type: text
 	name: auto attack
 	multi line: true
 	default: "<b><i>Automatic-attacks:</i></b> "
+	script: site_text_filter(value)
 	description: Automatic-attacks
 card field:
 	type: text
 	name: special
 	multi line: true
 	default: "<b><i>Special:</i></b> "
+	script: site_text_filter(value)
 	description: Special
 card field:
 	type: text

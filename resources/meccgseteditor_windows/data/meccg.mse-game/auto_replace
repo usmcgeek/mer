@@ -371,4 +371,7 @@ auto replace:
 auto replace:		
 	match:	Radgast
 	replace:	Radagast
+auto replace:
+	match: cancelled
+	replace: canceled
 
