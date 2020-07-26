@@ -44,6 +44,18 @@ text_filter :=
 		match: "--"
 		replace: "—"
 	) +
+	#####################################TESTING
+	##This section will autocomplete Keywords to add site/region icons
+	############################################
+	# Site Region Icon AutoComplete
+#	{ if set.site_icon_autocomplete then
+#		replace@(
+#			match: "Coastal",
+#			replace: {"CoastalSeas " + ("\\[") + "<sym>" + "c" + "</sym>" + ("\\]") }
+#			)
+#			else input
+#	} +
+	############################################
 	#Add CvCC Icon from Brackets
 	replace@(
 		match: "\\[[CV/|]+\\]",
@@ -102,6 +114,11 @@ text_filter :=
 	curly_quotes
 
 flavor_text_filter :=
+	#Replace double dash to long dash
+	replace@(
+		match: "--"
+		replace: { "<b>" + "—" }
+	) +
 	# Spellcheck
 	{ if set.mark_errors then
 		check_spelling(

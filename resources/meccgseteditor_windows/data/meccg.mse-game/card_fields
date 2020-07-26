@@ -136,6 +136,7 @@ card field:
 	show statistics: false
 	script: text_filter(value)
 	multi line: true
+	default: " "
 	description: Rules text
 card field:
 	type: text

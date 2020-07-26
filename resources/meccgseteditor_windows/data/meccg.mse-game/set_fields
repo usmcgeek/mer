@@ -16,9 +16,10 @@ set field:
 	name: notes
 	multi line: true
 	description: Additional notes
+#################################################################### Next Section
 set field:
 	type: info
-	name: Default values
+	name: Default Set Values
 set field:
 	type: text
 	name: challengedeck
@@ -31,6 +32,10 @@ set field:
 	type: text
 	name: copyright
 	description: Default copyright line (type (C) to insert a copyright symbol)
+##################################################################### Auto Options
+set field:
+	type: info
+	name: Numbering, SpellCheck, AutoComplete, Language Options
 set field:
 	type: boolean
 	name: automatic card numbers
@@ -39,7 +44,13 @@ set field:
 set field:
 	type: boolean
 	name: mark errors
-	description: Marks errors on cards, for example wording and spelling errors, non unique card names, etc.
+	description: Perform Spell Check on cards.
+###############################This feature is in Progress
+set field:
+	type: boolean
+	name: site icon autocomplete
+	description: (In Progress) Automatically detect site and region types in text, and add bracketed icons.
+######################################
 set field:
 	type: choice
 	name: card language

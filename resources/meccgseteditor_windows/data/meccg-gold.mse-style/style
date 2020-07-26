@@ -546,12 +546,12 @@ card style:
 			size: 28
 			scale down to: 8
 	home site:
-		left: { if has_home_site() then 145 else 1000 }
-		top: { if has_home_site() then 913 else 2000 }
-		width: 465
-		height: 30
+		left: { if has_home_site() then 205 else 1000 }
+		top: { if has_home_site() then 883 else 2000 }
+		width: 405
+		height: 60
 		z index: 3
-		alignment: right
+		alignment: right bottom
 		visible: { has_home_site() }
 		font:
 			name: Times New Roman
