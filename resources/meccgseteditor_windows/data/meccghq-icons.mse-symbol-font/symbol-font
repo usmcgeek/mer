@@ -58,7 +58,7 @@ symbol:
 	code: mp
 	image: mp.png
 symbol:
-	code: CvCC
+	code: CV
 	image: cvcc.png
 symbol:
 	code: P
@@ -96,7 +96,7 @@ insert symbol menu:
 	item: j
 	item: tap
 	item: mp
-	item: CvCC
+	item: CV
 	item: P
 	item: GI
 	item: EI

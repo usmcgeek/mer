@@ -44,9 +44,9 @@ text_filter :=
 		match: "--"
 		replace: "—"
 	) +
-	#Add CvCC Icon from Brackets ##NOT WORKING STILL - WHY?
+	#Add CvCC Icon from Brackets
 	replace@(
-		match: "\\[[CvCC/|]+\\]",
+		match: "\\[[CV/|]+\\]",
 		replace: {"<sym>" + input + "</sym>"} ) +
 	#Add Site Icons from Brackets
 	replace@(
@@ -80,16 +80,16 @@ text_filter :=
 ##Replaces to remove italics from brackets - works but
 ##stops all italics after brackets no matter what.  Needs more work
 ##################################################
-#	#Format site icon brackets (no italics)
-#	replace@(
-#		match: ("\\[")
-#		replace: "</i-auto>&<i-auto>"
-#	) +
-#	#Format site icon brackets (no italics)
-#	replace@(
-#		match: ("\\]")
-#		replace: "</i-auto>&<i-auto>"
-#	) +
+	#Format site icon brackets (no italics)
+	replace@(
+		match: ("\\[")
+		replace: "</i>"+ ("\\[")
+	) +
+	#Format site icon brackets (no italics)
+	replace@(
+		match: ("\\]")
+		replace: ("\\]") +"<i>"
+	) +
 #################################################
 	# Spellcheck
 	{ if set.mark_errors then
@@ -99,7 +99,7 @@ text_filter :=
 		)
 	  else input
 	} +
-	curly_quotes #after to avoid bad spellcheck
+	curly_quotes
 
 flavor_text_filter :=
 	# Spellcheck
