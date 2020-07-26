@@ -52,8 +52,8 @@ card field:
 		choice: Item DiagonalPB
 		choice:
 			name: Site
-			choice: Balrog
-			choice: Minion
+			choice: BalrogSite
+			choice: MinionSite
 	choice:
 		name: Region
 		choice: RegionVertical
@@ -68,7 +68,7 @@ card field:
 		choice: Grey Agent
 		choice: Item
 		choice: Item DiagonalPB
-		choice: Site
+		choice: SiteMH
 	choice:
 		name: Stage
 		choice: Ally
@@ -89,7 +89,7 @@ card field:
 		choice: Faction
 		choice: Item
 		choice: Item DiagonalPB
-		choice: Site
+		choice: SiteStage
 	description: Type
 
 card field:
@@ -134,14 +134,15 @@ card field:
 	type: text
 	name: rules text
 	show statistics: false
+	default: "Rules Text"
 	script: text_filter(value)
 	multi line: true
-	default: " "
 	description: Rules text
 card field:
 	type: text
 	name: flavor text
 	show statistics: false
+	default: "Flavor Text"
 	script: flavor_text_filter(value)
 	multi line: true
 	description: Flavor text

@@ -7,6 +7,24 @@ include file: language
 	#symbols_only := filter_rule(match: "[?dDsSbBfFHKRwc]")
 	#sites_only := filter_text(match: "[DSBFHKR]", input: value)
 
+###############################################################Corruption Icon Scripts
+corruption_icon := {
+	if is_wizard() then "cp_icon_blank.png"
+	else if (is_minionhero() and is_character()) then "cp_icon_hero_character.png"
+	else if is_minionhero() then "cp_icon_hero.png"
+	else if (is_hero() and is_character()) then "cp_icon_hero_character.png"
+	else if (is_minion() and is_character()) then "cp_icon_minion_character.png"
+	else if (is_minion() and is_hazard()) then "cp_icon_minion_character.png"
+	else if is_minion() then "cp_icon_minion.png"
+	else if is_hazard() then "cp_icon_hazard.png"
+	else if is_hazardagent() then "cp_icon_hazard.png"
+	else if is_elflord() then "cp_icon_elflord.png"
+	else if is_dwarflord() then "cp_icon_dwarflord.png"
+	else if is_dragonlord() then "cp_icon_dragonlord.png"
+	else if is_stage() then "cp_icon_stage.png"
+	else "cp_icon_hero.png"
+	}
+
 
 ############################################################## Card number
 
@@ -113,6 +131,10 @@ text_filter :=
 	} +
 	curly_quotes
 
+
+#################################################################
+#### Flavor Text Filter and Checks
+#################################################################
 flavor_text_filter :=
 	#Replace double dash to long dash
 	replace@(
@@ -131,11 +153,36 @@ flavor_text_filter :=
 	{ "<size:18><i>"+input+"</i></size>" } +
 	curly_quotes
 
+#######################################################################
+######## Site Text Filter and Checks
+###################################################################
+
+###############Assign Variables for common text prefix
+minion_site_first := "<b><i>Nearest Darkhaven:</i></b> "
+hero_site_first := "<b><i>Nearest Haven:</i></b> "
+balrog_site_first := "<b><i>Adjacent Sites:</i></b> "
+stage_site_first := ""
+
+#########Assign default prefix to sites based on type
+site_default_text := {
+	if is_minion_site() then minion_site_first
+	else if is_balrog_site() then balrog_site_first
+	else if is_minionhero_site() then balrog_site_first
+	else if is_stage_site() then stage_site_first
+	else hero_site_first
+}
+
+#######################Site Text Filter
 site_text_filter :=
 	#Replace double dash to long dash
 	replace@(
 		match: "--"
 		replace: "—"
+		) +
+	#Replace single automatic attack dash to long dash
+	replace@(
+		match: " - "
+		replace: " — "
 		) +
 	#Add Site Icons from Brackets
 	replace@(
@@ -150,6 +197,9 @@ site_text_filter :=
 	  else input
 	}
 
+######################################################################
+######## Title Text Spell Checking
+######################################################################
 title_text_filter :=
 	# Spellcheck
 	{ if set.mark_errors then

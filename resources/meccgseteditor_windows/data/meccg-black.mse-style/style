@@ -76,7 +76,7 @@ card style:
 			MinionHero Item DiagonalPB: minionhero_item.png
 			MinionHero Character: minionhero_character.png
 			MinionHero Grey Agent: grey_agent.png
-			MinionHero Site: minionhero_site.png
+			MinionHero SiteMH: minionhero_site.png
 			Minion Ally: minion_ally.png
 			Minion Ally DiagonalPB: minion_ally.png
 			Minion Avatar Balrog: minion_avatar.png
@@ -87,8 +87,8 @@ card style:
 			Minion Faction: minion_faction.png
 			Minion Item: minion_item.png
 			Minion Item DiagonalPB: minion_item.png
-			Minion Site Balrog: minion_site_balrog.png
-			Minion Site Minion: minion_site_minion.png
+			Minion Site BalrogSite: minion_site_balrog.png
+			Minion Site MinionSite: minion_site_minion.png
 			Stage Ally: stage_ally.png
 			Stage Ally DiagonalPB: stage_ally.png
 			Stage Avatar Dunadanlord: dunadan_lord.png
@@ -105,7 +105,7 @@ card style:
 			Stage Faction: stage_faction.png
 			Stage Item: stage_item.png
 			Stage Item DiagonalPB: stage_item.png
-			Stage Site: stage_site.png
+			Stage SiteStage: stage_site.png
 
 ###################Card Name###########################
 	name:
@@ -126,7 +126,7 @@ card style:
 			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0) else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
 			shadow displacement x: 2
 			shadow displacement y: 2
-			
+
 #####################Text Box########################
 	text:
 		left: { if is_hazard() then 93 else if is_regionvertical() then 147 else if is_regionhorizontal() then 150 else if not is_site() then 96 else 2000 }
@@ -606,17 +606,14 @@ extra card field:
 
 extra card style:
 	cp icon:
-		left: 626
+		left: {if is_site() or is_region() then 2000 else 626 }
 		top: 936
 		width: 70
 		height: 63
 		z index: 2
 		visible: { card.cp != "" and has_cp() }
-		#visible: { card.cp != "" }
 		render style: image
-		choice images:
-			default: { if is_wizard() then "cp_icon_blank.png" else if is_minionhero() and is_character() then "cp_icon_hero_character.png" else if is_minionhero() then "cp_icon_hero.png" else if is_hero() and is_character() then "cp_icon_hero_character.png" else if is_minion() and is_character() then "cp_icon_minion_character.png" else if is_hazardagent() then "cp_icon_hazard.png" else if is_hazard() then "cp_icon_hazard.png" else if is_minion() then "cp_icon_minion.png" else if is_elflord() then "cp_icon_elflord.png" else if is_dwarflord() then "cp_icon_dwarflord.png" else if is_dragonlord() then "cp_icon_dragonlord.png" else if is_stage() then "cp_icon_stage.png" else "cp_icon_hero.png" }
-			#default: { if is_minionhero() and is_character() then "cp_icon_hero_character.png" else if is_minionhero() then "cp_icon_hero.png" else if is_hero() and is_character() then "cp_icon_hero_character.png" else if is_minion() and is_character() then "cp_icon_minion_character.png" else if is_hazardagent() then "cp_icon_hazard.png" else if is_hazard() then "cp_icon_hazard.png" else if is_minion() then "cp_icon_minion.png" else if is_elflord() then "cp_icon_elflord.png" else if is_dwarflord() then "cp_icon_dwarflord.png" else if is_dragonlord() then "cp_icon_dragonlord.png" else if is_stage() then "cp_icon_stage.png" else if is_wizard() then "cp_icon_blank.png" else "cp_icon_hero.png" }
+		image: { corruption_icon() }
 
 extra card field:
 	type: choice

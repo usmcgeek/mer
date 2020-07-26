@@ -18,6 +18,10 @@
 	is_hazardagent := { contains(card.background, match: "Haz") }
 	is_creature := { contains(card.background, match: "Creature") }
 	is_site := { contains(card.background, match: "Site") }
+	is_minion_site := { contains(card.background, match: "MinionSite") }
+	is_balrog_site := { contains(card.background, match: "BalrogSite") }
+	is_stage_site := { contains(card.background, match: "SiteStage") }
+	is_minionhero_site := { contains(card.background, match: "SiteMH") }
 	is_event := { contains(card.background, match: "Event") }
 	is_item := { contains(card.background, match: "Item") }
 	is_resource := { not is_character() and not is_site() and not is_hazard() and not is_avatar() }
@@ -30,7 +34,7 @@
 	is_dwarflord := { contains(card.background, match: "Dwarflord") }
 	is_manlord := { contains(card.background, match: "Manlord") }
 	is_Dunadanlord := { contains(card.background, match: "Dunadanlord") }
-	has_cp := { is_character() or is_event() or is_item() or is_dreamcard() }
+	has_cp := { not is_site() or not is_region() }
 	has_mind := { not is_region() or is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) or is_dreamcard() }
 	has_influence := { is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) }
 	has_influence2 := { is_dreamcard() or (not is_stage() and is_resource() and is_item()) }
@@ -38,4 +42,9 @@
 	has_sp := { (is_resource() and is_stage()) or (is_site() and is_stage()) or (is_hazard() and is_event()) or (is_minion() and is_resource()) }
 	has_home_site := { is_character() or is_avatar() or is_agent() }
 	has_diagonalprowess := { contains(card.background, match: "DiagonalPB") }
-	is_wizard := { contains(card.background, match: "wizard") }
+	is_gandalf := { contains(card.background, match: "Gandalf") }
+	is_alatar := { contains(card.background, match: "Alatar") }
+	is_pallando := { contains(card.background, match: "Pallando") }
+	is_radagast := { contains(card.background, match: "Radagast") }
+	is_saruman := { contains(card.background, match: "Saruman") }
+	is_wizard := { is_gandalf() or is_alatar() or is_pallando() or is_radagast() or is_saruman() }
