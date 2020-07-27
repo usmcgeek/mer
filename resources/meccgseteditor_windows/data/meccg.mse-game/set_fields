@@ -19,15 +19,23 @@ set field:
 #################################################################### Next Section
 set field:
 	type: info
-	name: Default Set Values
+	name: Challenge Deck Letter (If making Challenge Deck)
 set field:
 	type: text
 	name: challengedeck
 	description: Challenge Deck Letter
+
+set field:
+	type: info
+	name: Sets the Rune in the lower right for Set Identification
 set field:
 	type: text
 	name: symbol
 	description: Default set symbol (one letter or Space, displayed as a Cirth rune on the lower right)
+
+set field:
+	type: info
+	name: Copyright Line information
 set field:
 	type: text
 	name: copyright
@@ -35,22 +43,24 @@ set field:
 ##################################################################### Auto Options
 set field:
 	type: info
-	name: Numbering, SpellCheck, AutoComplete, Language Options
+	name: Auto Card Numbering (Format: 001/100, Placement is Lower Right Side)
 set field:
 	type: boolean
 	name: automatic card numbers
 	description: Should card numbers be shown on the cards?
 	initial: no
+
+set field:
+	type: info
+	name: Spell Checking and Auto-Replace
 set field:
 	type: boolean
 	name: mark errors
 	description: Perform Spell Check on cards.
-###############################This feature is in Progress
+
 set field:
-	type: boolean
-	name: site icon autocomplete
-	description: (In Progress) Automatically detect site and region types in text, and add bracketed icons.
-######################################
+	type: info
+	name: Choose Language for Spell Checking
 set field:
 	type: choice
 	name: card language
@@ -60,6 +70,17 @@ set field:
 	choice: Deutsch
 	choice: Spanish
 	initial: English
+
+###############################This feature is in Progress
+set field:
+	type: info
+	name: In Testing Features
+set field:
+	type: boolean
+	name: site icon autocomplete
+	description: (In Progress) Automatically detect site and region types in text, and add bracketed icons.
+######################################
+
 set field:
 	type: info
 	name: Export specific values (leave blank if unsure)
@@ -82,3 +103,8 @@ default set style:
 			Français: /meccg.mse-game/icons/language-fr.png
 			Deutsch:  /meccg.mse-game/icons/language-de.png
 			Spanish:  /meccg.mse-game/icons/language-es.png
+
+	symbol:
+		font:
+			name: Cirth Erebor
+			size: 12
