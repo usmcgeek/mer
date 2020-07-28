@@ -188,7 +188,6 @@ card field:
 	#script: symbols_only(value)
 	multi line: true
 	description: Playable (use symbols dDsSbBfFHKRwc)
-	#script : "<sym>"+card.playable+"</sym>"
 
 card field:
 	type: text
@@ -196,7 +195,6 @@ card field:
 	#script: symbols_only(value)
 	multi line: true
 	description: Playable (use symbols dDsSbBfFHKRwc)
-	#script : "<sym>"+card.playable+"</sym>"
 
 card field:
 	type: text
@@ -231,6 +229,7 @@ card field:
 card field:
 	type: text
 	name: class
+	script: class_text_filter(value)
 	description: Class
 
 card field:

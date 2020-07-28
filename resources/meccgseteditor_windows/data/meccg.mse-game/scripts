@@ -158,8 +158,7 @@ text_filter :=
 		match: "\\[[CP/|]+\\]",
 		replace: {"<sym>" + input + "</sym>"} ) +
 ##################################################
-##Replaces to remove italics from brackets - works but
-##stops all italics after brackets no matter what.  Needs more work
+##Replaces to remove italics from brackets
 ##################################################
 	#Format site icon brackets (no italics)
 	replace@(
@@ -260,3 +259,54 @@ title_text_filter :=
 		)
 	  else input
 	}
+
+	######################################################################
+	######## Card Class Filter and Spelling
+	######################################################################
+
+class_text_filter :=
+#############Ensure proper formatting for events
+	replace@(
+		match: "Short-Event"
+		replace: "Short-event"
+		) +
+	replace@(
+		match: "short-event"
+		replace: "Short-event"
+		) +
+	replace@(
+		match: "short-Event"
+		replace: "Short-event"
+		) +
+	replace@(
+		match: "Long-Event"
+		replace: "Long-event"
+		) +
+	replace@(
+		match: "long-event"
+		replace: "Long-event"
+		) +
+	replace@(
+		match: "long-Event"
+		replace: "Long-event"
+		) +
+	replace@(
+		match: "Permanent-Event"
+		replace: "Permanent-event"
+		) +
+	replace@(
+		match: "permanent-event"
+		replace: "Permanent-event"
+		) +
+	replace@(
+		match: "permanent-Event"
+		replace: "Long-event"
+		) +
+		# Spellcheck
+		{ if set.mark_errors then
+			check_spelling(
+				language: language().spellcheck_code,
+				extra_dictionary: "/meccg.mse-game/meccg-words"
+			)
+		  else input
+		}
