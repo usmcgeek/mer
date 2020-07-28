@@ -7,24 +7,85 @@ include file: language
 	#symbols_only := filter_rule(match: "[?dDsSbBfFHKRwc]")
 	#sites_only := filter_text(match: "[DSBFHKR]", input: value)
 
+	############################################################
+	###Card Categorization Scripts
+	############################################################
+		#is_wizard := { contains(card.background, match: "wizard") }
+		is_region := { contains(card.background, match: "Region") }
+		is_regionvertical := { contains(card.background, match: "RegionVertical") }
+		is_regionhorizontal := { contains(card.background, match: "RegionHorizontal") }
+		is_hazard := { contains(card.background, match: "Hazard") }
+		is_hero := { contains(card.background, match: "Hero") }
+		is_minionhero := { contains(card.background, match: "MinionHero") }
+		is_minion := { contains(card.background, match: "Minion") and not contains(card.background, match: "Balrog") }
+		is_stage := { contains(card.background, match: "Stage") }
+		is_ally := { contains(card.background, match: "Ally") }
+		is_avatar := { contains(card.background, match: "Avatar") }
+		is_character := { contains(card.background, match: "Character") }
+		is_agent := { contains(card.background, match: "Agent") }
+		is_hazardagent := { contains(card.background, match: "Haz") }
+		is_creature := { contains(card.background, match: "Creature") }
+		is_site := { contains(card.background, match: "Site") }
+		is_minion_site := { contains(card.background, match: "MinionSite") }
+		is_balrog_site := { contains(card.background, match: "BalrogSite") }
+		is_stage_site := { contains(card.background, match: "SiteStage") }
+		is_minionhero_site := { contains(card.background, match: "SiteMH") }
+		is_event := { contains(card.background, match: "Event") }
+		is_item := { contains(card.background, match: "Item") }
+		is_resource := { not is_character() and not is_site() and not is_hazard() and not is_avatar() }
+		is_balrog := { contains(card.background, match: "Avatar Balrog") }
+		is_ringwraith := { contains(card.background, match: "Ringwraith") }
+		is_fallenwizard := { not is_dreamcard() and is_avatar() and is_stage() }
+		is_dreamcard := { contains(card.background, match: "lord") }
+		is_elflord := { contains(card.background, match: "Elflord") }
+		is_dragonlord := { contains(card.background, match: "Dragonlord") }
+		is_dwarflord := { contains(card.background, match: "Dwarflord") }
+		is_manlord := { contains(card.background, match: "Manlord") }
+		is_Dunadanlord := { contains(card.background, match: "Dunadanlord") }
+		has_cp := { not is_site() or not is_region() }
+		has_mind := { not is_region() or is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) or is_dreamcard() }
+		has_influence := { is_resource() or is_character() or is_avatar() or is_agent() or (is_hazard() and is_event()) }
+		has_influence2 := { is_dreamcard() or (not is_stage() and is_resource() and is_item()) }
+		has_influenceg := { (is_avatar() and is_stage()) or (is_stage() and is_event()) }
+		has_sp := { (is_resource() and is_stage()) or (is_site() and is_stage()) or (is_hazard() and is_event()) or (is_minion() and is_resource()) }
+		has_home_site := { is_character() or is_avatar() or is_agent() }
+		has_diagonalprowess := { contains(card.background, match: "DiagonalPB") }
+		is_gandalf := { contains(card.background, match: "Gandalf") }
+		is_alatar := { contains(card.background, match: "Alatar") }
+		is_pallando := { contains(card.background, match: "Pallando") }
+		is_radagast := { contains(card.background, match: "Radagast") }
+		is_saruman := { contains(card.background, match: "Saruman") }
+		is_wizard := { is_gandalf() or is_alatar() or is_pallando() or is_radagast() or is_saruman() }
+
 ###############################################################Corruption Icon Scripts
 corruption_icon := {
 	if is_wizard() then "cp_icon_blank.png"
-	else if (is_minionhero() and is_character()) then "cp_icon_hero_character.png"
-	else if is_minionhero() then "cp_icon_hero.png"
-	else if (is_hero() and is_character()) then "cp_icon_hero_character.png"
-	else if (is_minion() and is_character()) then "cp_icon_minion_character.png"
-	else if (is_minion() and is_hazard()) then "cp_icon_minion_character.png"
-	else if is_minion() then "cp_icon_minion.png"
-	else if is_hazard() then "cp_icon_hazard.png"
-	else if is_hazardagent() then "cp_icon_hazard.png"
-	else if is_elflord() then "cp_icon_elflord.png"
-	else if is_dwarflord() then "cp_icon_dwarflord.png"
-	else if is_dragonlord() then "cp_icon_dragonlord.png"
-	else if is_stage() then "cp_icon_stage.png"
-	else "cp_icon_hero.png"
+	else if (is_minionhero() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero_character.png"
+	else if is_minionhero() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero.png"
+	else if (is_hero() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero_character.png"
+	else if (is_minion() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion_character.png"
+	else if (is_minion() and is_hazard()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion_character.png"
+	else if is_minion() then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion.png"
+	else if is_hazard() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hazard.png"
+	else if is_hazardagent() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hazard.png"
+	else if is_elflord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_elflord.png"
+	else if is_dwarflord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_dwarflord.png"
+	else if is_dragonlord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_dragonlord.png"
+	else if is_stage() then "/meccg-common-images.mse-include/cp_icons/cp_icon_stage.png"
+	else "/meccg-common-images.mse-include/cp_icons/cp_icon_hero.png"
 	}
 
+###########################################################Stage avatar unique icons
+stage_unique_icon := {
+	if card.fw == "MG" then "/meccg-common-images.mse-include/stage_res_icons/mgstage.png"
+	else if card.fw =="PA" then "/meccg-common-images.mse-include/stage_res_icons/pastage.png"
+	else if card.fw =="GA" then "/meccg-common-images.mse-include/stage_res_icons/gastage.png"
+	else if card.fw =="SA" then "/meccg-common-images.mse-include/stage_res_icons/sastage.png"
+	else if card.fw =="AL" then "/meccg-common-images.mse-include/stage_res_icons/alstage.png"
+	else if card.fw =="RA" then "/meccg-common-images.mse-include/stage_res_icons/rastage.png"
+	else "/meccg-common-images.mse-include/stage_res_icons/wlkstage.png"
+
+	}
 
 ############################################################## Card number
 
@@ -62,17 +123,7 @@ text_filter :=
 		match: "--"
 		replace: "—"
 	) +
-	#####################################TESTING
-	##This section will autocomplete Keywords to add site/region icons
-	############################################
-	# Site Region Icon AutoComplete
-#	{ if set.site_icon_autocomplete then
-#		replace@(
-#			match: "Coastal",
-#			replace: {"CoastalSeas " + ("\\[") + "<sym>" + "c" + "</sym>" + ("\\]") }
-#			)
-#			else input
-#	} +
+
 	############################################
 	#Add CvCC Icon from Brackets
 	replace@(
@@ -158,10 +209,10 @@ flavor_text_filter :=
 ###################################################################
 
 ###############Assign Variables for common text prefix
-minion_site_first := "<b><i>Nearest Darkhaven:</i></b> "
-hero_site_first := "<b><i>Nearest Haven:</i></b> "
-balrog_site_first := "<b><i>Adjacent Sites:</i></b> "
-stage_site_first := ""
+minion_site_first := "<b><i>" + "Nearest Darkhaven: " + "</i></b>"
+hero_site_first := "<b><i>" + "Nearest Haven: " + "</i></b>"
+balrog_site_first := "<b><i>" + "Adjacent Sites: " + "</i></b>"
+stage_site_first := " "
 
 #########Assign default prefix to sites based on type
 site_default_text := {

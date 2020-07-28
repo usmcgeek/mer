@@ -71,15 +71,6 @@ set field:
 	choice: Spanish
 	initial: English
 
-###############################This feature is in Progress
-set field:
-	type: info
-	name: In Testing Features
-set field:
-	type: boolean
-	name: site icon autocomplete
-	description: (In Progress) Automatically detect site and region types in text, and add bracketed icons.
-######################################
 
 set field:
 	type: info

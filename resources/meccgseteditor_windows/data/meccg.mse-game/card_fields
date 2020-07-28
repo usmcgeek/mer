@@ -92,6 +92,10 @@ card field:
 		choice: SiteStage
 	description: Type
 
+###########################################################################
+### Card Fields
+###########################################################################
+
 card field:
 	type: text
 	name: name
@@ -99,12 +103,14 @@ card field:
 	show statistics: false
 	script: title_text_filter(value)
 	description: Name
+
 card field: #deprecated - for removal
 	type: text
 	name: cardnumber
 	identifying: false
 	show statistics: false
 	description: Cardnumber
+
 card field:
 	type: text
 	name: challengedeck
@@ -112,17 +118,20 @@ card field:
 	show statistics: false
 	description: Challenge Deck Letter
 	script: if set.challengedeck != "" then set.challengedeck
+
 card field: #deprecated - for removal
 	type: text
 	name: vc mark
 	identifying: true
 	show statistics: false
 	description: virtual card mark
+
 card field:
 	type: image
 	name: picture
 	show statistics: false
 	description: Art; double click to choose
+
 card field:
 	type: image
 	name: region picture
@@ -130,6 +139,7 @@ card field:
 	description: Art; double click to choose
 
 ################################################Rules and Flavor Text - Normal Cards
+
 card field:
 	type: text
 	name: rules text
@@ -138,6 +148,7 @@ card field:
 	script: text_filter(value)
 	multi line: true
 	description: Rules text
+
 card field:
 	type: text
 	name: flavor text
@@ -146,6 +157,7 @@ card field:
 	script: flavor_text_filter(value)
 	multi line: true
 	description: Flavor text
+
 card field:
 	type: text
 	name: text
@@ -154,6 +166,7 @@ card field:
 	multi line: true
 	script: combined_editor(field1: card.rules_text, separator: "<line>\n</line>", field2: card.flavor_text)
 	description: Text
+
 ################################################################################
 
 card field:
@@ -162,11 +175,13 @@ card field:
 	script: numbers_only(value)
 	card list visible: true
 	description: Mind
+
 card field:
 	type: text
 	name: sp
 	script: numbers_only(value)
 	description: Stage poins
+
 card field:
 	type: text
 	name: playable
@@ -174,6 +189,7 @@ card field:
 	multi line: true
 	description: Playable (use symbols dDsSbBfFHKRwc)
 	#script : "<sym>"+card.playable+"</sym>"
+
 card field:
 	type: text
 	name: region type
@@ -181,70 +197,84 @@ card field:
 	multi line: true
 	description: Playable (use symbols dDsSbBfFHKRwc)
 	#script : "<sym>"+card.playable+"</sym>"
+
 card field:
 	type: text
 	name: mp
 	#script: numbers_only(value)
 	description: Marshalling points
+
 card field:
 	type: text
 	name: influence
 	script: numbers_only(value)
 	description: Direct influence
+
 card field:
 	type: text
 	name: influence2
 	script: numbers_only(value)
 	description: Direct influence
+
 card field:
 	type: text
 	name: influencep
 	script: numbers_only(value)
 	description: Direct influence with []
+
 card field:
 	type: text
 	name: influenceg
 	script: numbers_only(value)
 	description: General Influence FW Avatar
+
 card field:
 	type: text
 	name: class
 	description: Class
+
 card field:
 	type: text
 	name: artist
 	#script: combined_editor ( prefix: "Art by ", field1: card.artist_combined )
 	default: "<prefix>Art by </prefix>"
 	description: Artist
+
 card field:
 	type: text
 	name: random
 	description: Random value
 	script: random_int(begin:1, end:7) + random_int(begin:1, end:7)
+
 card field:
 	type: text
 	name: set
 	description: Set
 	#default: "k"
 	script: if set.symbol != "" then set.symbol else "k"
+
 card field:
 	type: text
 	name: copyright
 	description: Copyright
 	script: if set.copyright != "" then set.copyright else ""
+
 card field:
 	type: text
 	name: cp
 	description: Corruption
 	default: ""
+
 card field:
 	type: text
 	name: prowess
 	description: Prowess
+
 card field:
 	type: text
 	name: body
 	description: Body
+
 card field:
 	type: text
 	name: pb
@@ -260,12 +290,14 @@ card field:
 	card list visible: false
 	description: Prowess/Body
 	show statistics: false
+
 card field:
 	type: text
 	name: prowess body separator
 	editable: false
 	default: "<prefix>/</prefix>"
 	description: PB Separator
+
 card field:
 	type: choice
 	name: rarity
@@ -274,12 +306,14 @@ card field:
 	choice: U
 	choice: R
 	choice: P
+
 card field:
 	type: text
 	name: home site
 	multi line: true
 	default: "<prefix><b>Home Site:</b> </prefix>"
 	description: Home site
+
 card field:
 	type: choice
 	name: fw
@@ -293,39 +327,98 @@ card field:
 	choice: AL
 	choice: wlk
 
+card field:
+	type: choice
+	name: fw icon
+	editable: false
+	choice: default
+
+card field:
+	type: choice
+	name: cp icon
+	editable: false
+	choice: default
+
+card field:
+	type: choice
+	name: mind icon
+	editable: true
+	choice: normal
+	choice: black
+
+card field:
+	type: choice
+	name: influenceg icon
+	editable: false
+	choice: default
+
+card field:
+	type: choice
+	name: influence icon
+	editable: false
+	choice: default
+
+card field:
+	type: choice
+	name: influence bracket icon
+	choice: Unrestricted
+	choice: Restricted
+
+card field:
+	type: choice
+	name: influence icon2
+	editable: false
+	choice: default
+
+card field:
+	type: choice
+	name: influence bracket icon2
+	choice: Unrestricted
+	choice: Restricted
+
+card field:
+	type: choice
+	name: sp icon
+	editable: false
+	choice: default
+
 ##################################################################
 ### Site Card Specific Fields
 ##################################################################
+
 card field:
 	type: text
 	name: site type
 	description: Site type
-	#script: sites_only(value)
-	#script: "<sym>"+card.site_type+"</sym>"
+
 card field:
 	type: text
 	name: site path
 	multi line: true
 	description: Site path
-	#script : "<sym>"+card.site_path+"</sym>"
+
 card field:
 	type: text
 	name: draw
 	script: numbers_only(value)
 	description: Draw
+
 card field:
 	type: text
 	name: draw opp
 	script: numbers_only(value)
 	description: Opponent Draw
+
 #######################Site Card Main Text Box
+
 card field:
 	type: text
 	name: haven
 	multi line: true
-	default: "<b><i>Nearest Haven:</i></b> "
+	default: site_default_text()
 	script: site_text_filter(value)
 	description: Nearest haven
+
 card field:
 	type: text
 	name: site playable
@@ -333,6 +426,7 @@ card field:
 	default: "<b><i>Playable:</i></b> "
 	script: site_text_filter(value)
 	description: Playable
+
 card field:
 	type: text
 	name: auto attack
@@ -340,6 +434,7 @@ card field:
 	default: "<b><i>Automatic-attacks:</i></b> "
 	script: site_text_filter(value)
 	description: Automatic-attacks
+
 card field:
 	type: text
 	name: special
@@ -347,6 +442,7 @@ card field:
 	default: "<b><i>Special:</i></b> "
 	script: site_text_filter(value)
 	description: Special
+
 card field:
 	type: text
 	name: site text
@@ -355,3 +451,14 @@ card field:
 	multi line: true
 	script: combined_editor( field1: card.haven, separator1: "<line>\n</line>", field2: card.site_playable, separator2: "<line>\n</line>", field3: card.auto_attack, separator3: "<line>\n</line>", field4: card.special )
 	description: Text
+
+###########################################################################
+### Card Numbering Field
+###########################################################################
+card field:
+	type: text
+	name: card code
+	save value: false
+	script:
+		if set.automatic_card_numbers then
+			forward_editor(prefix: card_number_m15() + "/" + card_count_m15(), field: card.card_code_text)
