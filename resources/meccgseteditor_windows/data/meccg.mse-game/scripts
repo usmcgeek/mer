@@ -60,30 +60,30 @@ include file: language
 ###############################################################Corruption Icon Scripts
 corruption_icon := {
 	if is_wizard() then "cp_icon_blank.png"
-	else if (is_minionhero() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero_character.png"
-	else if is_minionhero() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero.png"
-	else if (is_hero() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_hero_character.png"
-	else if (is_minion() and is_character()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion_character.png"
-	else if (is_minion() and is_hazard()) then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion_character.png"
-	else if is_minion() then "/meccg-common-images.mse-include/cp_icons/cp_icon_minion.png"
-	else if is_hazard() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hazard.png"
-	else if is_hazardagent() then "/meccg-common-images.mse-include/cp_icons/cp_icon_hazard.png"
-	else if is_elflord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_elflord.png"
-	else if is_dwarflord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_dwarflord.png"
-	else if is_dragonlord() then "/meccg-common-images.mse-include/cp_icons/cp_icon_dragonlord.png"
-	else if is_stage() then "/meccg-common-images.mse-include/cp_icons/cp_icon_stage.png"
-	else "/meccg-common-images.mse-include/cp_icons/cp_icon_hero.png"
+	else if (is_minionhero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
+	else if is_minionhero() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
+	else if (is_hero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
+	else if (is_minion() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion_character.png"
+	else if (is_minion() and is_hazard()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion_character.png"
+	else if is_minion() then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion.png"
+	else if is_hazard() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hazard.png"
+	else if is_hazardagent() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hazard.png"
+	else if is_elflord() then "/meccg-remastered.mse-include/cp_icons/cp_icon_elflord.png"
+	else if is_dwarflord() then "/meccg-remastered.mse-include/cp_icons/cp_icon_dwarflord.png"
+	else if is_dragonlord() then "/meccg-remastered.mse-include/cp_icons/cp_icon_dragonlord.png"
+	else if is_stage() then "/meccg-remastered.mse-include/cp_icons/cp_icon_stage.png"
+	else "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
 	}
 
 ###########################################################Stage avatar unique icons
 stage_unique_icon := {
-	if card.fw == "MG" then "/meccg-common-images.mse-include/stage_res_icons/mgstage.png"
-	else if card.fw =="PA" then "/meccg-common-images.mse-include/stage_res_icons/pastage.png"
-	else if card.fw =="GA" then "/meccg-common-images.mse-include/stage_res_icons/gastage.png"
-	else if card.fw =="SA" then "/meccg-common-images.mse-include/stage_res_icons/sastage.png"
-	else if card.fw =="AL" then "/meccg-common-images.mse-include/stage_res_icons/alstage.png"
-	else if card.fw =="RA" then "/meccg-common-images.mse-include/stage_res_icons/rastage.png"
-	else "/meccg-common-images.mse-include/stage_res_icons/wlkstage.png"
+	if card.fw == "MG" then "/meccg-remastered.mse-include/stage_res_icons/mgstage.png"
+	else if card.fw =="PA" then "/meccg-remastered.mse-include/stage_res_icons/pastage.png"
+	else if card.fw =="GA" then "/meccg-remastered.mse-include/stage_res_icons/gastage.png"
+	else if card.fw =="SA" then "/meccg-remastered.mse-include/stage_res_icons/sastage.png"
+	else if card.fw =="AL" then "/meccg-remastered.mse-include/stage_res_icons/alstage.png"
+	else if card.fw =="RA" then "/meccg-remastered.mse-include/stage_res_icons/rastage.png"
+	else "/meccg-remastered.mse-include/stage_res_icons/wlkstage.png"
 
 	}
 
