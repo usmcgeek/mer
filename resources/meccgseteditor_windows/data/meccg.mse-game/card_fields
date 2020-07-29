@@ -100,7 +100,8 @@ card field:
 		choice: Item DiagonalPB
 		choice: SiteStage
 	description: Type
-
+	card list visible: true
+	
 ###########################################################################
 ### Card Fields
 ###########################################################################
@@ -110,6 +111,7 @@ card field:
 	name: name
 	identifying: true
 	show statistics: false
+	card list visible: true
 	script: title_text_filter(value)
 	description: Name
 
@@ -189,7 +191,7 @@ card field:
 	type: text
 	name: mind
 	script: numbers_only(value)
-	card list visible: true
+	card list visible: false
 	description: Mind
 
 card field:
