@@ -2,6 +2,15 @@
 ### Card Fields Go Here (Common Card Fields for all sets)
 ##################################################################
 
+################################################
+### Testing Border Color options
+card field:
+	type: color
+	name: border color
+	default: set.border_color
+	show statistics: false
+	description: The border of the card; can be any solid color.
+
 ##################################################################
 ### Card Background Drop Down Menu Choices
 ##################################################################
@@ -118,6 +127,13 @@ card field:
 	show statistics: false
 	description: Challenge Deck Letter
 	script: if set.challengedeck != "" then set.challengedeck
+
+card field:
+	type: choice
+	name: challengedeckicon
+	editable: true
+	choice: default
+	choice: sideboard
 
 card field: #deprecated - for removal
 	type: text

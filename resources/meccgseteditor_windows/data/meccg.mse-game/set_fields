@@ -33,6 +33,7 @@ set field:
 	name: symbol
 	description: Default set symbol (one letter or Space, displayed as a Cirth rune on the lower right)
 
+
 set field:
 	type: info
 	name: Copyright Line information
@@ -40,6 +41,47 @@ set field:
 	type: text
 	name: copyright
 	description: Default copyright line (type (C) to insert a copyright symbol)
+
+##################################### Border color
+set field:
+	type: info
+	name: Choose the card border color
+set field:
+	type: color
+	name: border color
+	description: The default border color for cards
+	choice:
+		name: Black - Limited
+		color: rgb(0,0,0)
+	choice:
+		name: Blue - Unlimited
+		color: rgb(0,71,124)
+	choice:
+		name: Silver - Challenge Deck
+		color: rgb(128,128,128)
+	choice:
+		name: Gold
+		color: rgb(200,180,0)
+	choice:
+		name: Green
+		color: rgb(15,121,52)
+	choice:
+		name: Dark Green
+		color: rgb(76,153,0)
+	choice:
+		name: Dark Red
+		color: rgb(153,0,0)
+	choice:
+		name: Light Blue
+		color: rgb(0,204,204)
+	choice:
+		name: Purple
+		color: rgb(127,0,255)
+	choice:
+		name: Orange
+		color: rgb(255,128,0)
+
+
 ##################################################################### Auto Options
 set field:
 	type: info
