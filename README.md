@@ -1,5 +1,7 @@
 # Middle Earth Remastered Repo
 
+* Check the Wiki for guides and tips!
+
 ## Notes:
  * SetEditor in \resources\meccgseteditor_windows
  * Note - while this is compatible with normal magicseteditor, you will not get full resolution with the normal one.
