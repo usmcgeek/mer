@@ -421,8 +421,8 @@ card style:
 		visible: { has_mind() and card.mind != "" }
 		render style: image
 		choice images:
-			normal: mind.png
-			black: mind2.png
+			normal: /meccg-remastered.mse-include/mind.png
+			black: /meccg-remastered.mse-include/mind2.png
 
 # General Influence
 	influenceg:
@@ -449,7 +449,7 @@ card style:
 		visible: { has_influenceg() and card.influenceg != "" }
 		render style: image
 		choice images:
-			default: influence_general.png
+			default: /meccg-remastered.mse-include/influence_general.png
 
 # Direct Influence
 	influence:
@@ -476,7 +476,7 @@ card style:
 		visible: { has_influence() and	card.influence != "" }
 		render style: image
 		choice images:
-			default: influence.png
+			default: /meccg-remastered.mse-include/influence.png
 
 	influence bracket icon:
 		left: { if has_influence() then 62 else 1000 }
@@ -488,8 +488,8 @@ card style:
 		render style: image
 		popup style: in place
 		choice images:
-			Unrestricted: empty.png
-			Restricted: restricted.png
+			Unrestricted: /meccg-remastered.mse-include/empty.png
+			Restricted: /meccg-remastered.mse-include/restricted.png
 
 # Second Direct Influence Field
 	influence2:
@@ -516,7 +516,7 @@ card style:
 		visible: { has_influence2() and	card.influence2 != "" }
 		render style: image
 		choice images:
-			default: influence.png
+			default: /meccg-remastered.mse-include/influence.png
 
 	influence bracket icon2:
 		left: { if has_influence2() then 65 else 1000 }
@@ -528,8 +528,8 @@ card style:
 		render style: image
 		popup style: in place
 		choice images:
-			Unrestricted: empty.png
-			Restricted: restricted2.png
+			Unrestricted: /meccg-remastered.mse-include/empty.png
+			Restricted: /meccg-remastered.mse-include/restricted2.png
 
 # Stage Points
 	sp:
@@ -555,7 +555,7 @@ card style:
 		visible: { has_sp() and card.sp != "" }
 		render style: image
 		choice images:
-			default: sp.png
+			default: /meccg-remastered.mse-include/sp.png
 
 # Fallen Wizard Field for Unique Resources
 	fw:

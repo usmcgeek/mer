@@ -50,6 +50,7 @@ set field:
 	type: color
 	name: border color
 	description: The default border color for cards
+	allow custom: true
 	choice:
 		name: Black - Limited
 		color: rgb(0,0,0)
@@ -65,9 +66,6 @@ set field:
 	choice:
 		name: Green
 		color: rgb(15,121,52)
-	choice:
-		name: Dark Green
-		color: rgb(76,153,0)
 	choice:
 		name: Dark Red
 		color: rgb(153,0,0)
