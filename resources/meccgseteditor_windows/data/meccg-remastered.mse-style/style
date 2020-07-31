@@ -390,7 +390,7 @@ card style:
 		font:
 			name: Times New Roman
 			#weight: bold
-			color: { if (is_minionhero() and is_agent() ) then rgb(0,0,0) else if is_minionhero() then rgb(255,255,255) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(0,0,0) else rgb(255,255,255)}
+			color: { if is_minionhero() then rgb(255,255,255) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(0,0,0) else rgb(255,255,255)}
 			size: { if is_item() then (40 - (length(card.mp) * 2)) else (40 - (length(card.mp) * 3)) }
 			#size: 40
 			scale down to: 8
@@ -612,7 +612,7 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: MECCGBold
-			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_minionhero_site() then rgb(255,255,255) else if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
 			size: 15
 			scale down to: 8
 			#weight: bold
@@ -754,7 +754,7 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times New Roman
-			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_greyagent() then rgb(255,255,255) else if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
 			#weight: bold
 			size: 28
 			scale down to: 8
@@ -783,7 +783,7 @@ card style:
 		alignment: center shrink-overflow
 		font:
 			name: Times Small Caps & Old Style Fi
-			color: { if is_balrog() or is_ringwraith() then rgb(255,255,255) else if is_avatar() or (is_minionhero() and is_agent() ) or ( is_hero() and is_character() or is_site() or is_region() ) then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_balrog() or is_ringwraith() or is_minionhero_site() or is_greyagent() then rgb(255,255,255) else if is_avatar() or (is_minionhero() and is_agent() ) or ( is_hero() and is_character() or is_site() or is_region() ) then rgb(0,0,0) else rgb(255,255,255) }
 			size: { if is_region() then 20 else 16 }
 			scale down to: 4
 
