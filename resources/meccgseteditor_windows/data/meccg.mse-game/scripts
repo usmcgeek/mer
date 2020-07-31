@@ -38,6 +38,7 @@ include file: language
 		is_fallenwizard := { not is_dreamcard() and is_avatar() and is_stage() }
 		is_dreamcard := { contains(card.background, match: "lord") }
 		is_elflord := { contains(card.background, match: "Elflord") }
+		is_greyagent := { contains(card.background, match: "Grey") }
 		is_dragonlord := { contains(card.background, match: "Dragonlord") }
 		is_dwarflord := { contains(card.background, match: "Dwarflord") }
 		is_manlord := { contains(card.background, match: "Manlord") }
@@ -61,6 +62,7 @@ include file: language
 corruption_icon := {
 	if is_wizard() then "cp_icon_blank.png"
 	else if (is_minionhero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
+	else if is_greyagent() then "/meccg-remastered.mse-include/cp_icons/cp_icon_greyagent.png"
 	else if is_minionhero() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
 	else if (is_hero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
 	else if (is_minion() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion_character.png"
