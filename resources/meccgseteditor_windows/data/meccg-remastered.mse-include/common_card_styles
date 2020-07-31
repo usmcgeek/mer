@@ -16,8 +16,8 @@ symbol_font := {
 ####################################################################
 
 challenge_font := {
-	if card.challengedeckicon=="challengedeckicon_side.png" then rgb(255,255,255)
-	else rgb(0,0,0)
+	if chosen(choice:"default", card.challengedeckicon) then rgb(0,0,0)
+	else rgb(255,255,255)
 }
 
 ####################################################################
@@ -146,7 +146,7 @@ text_symbol_alignment := {
 	"middle center"
 }
 
-text_pad_left := { 6 }
+text_pad_left := { 10 }
 
 text_pad_top := { 2 }
 
@@ -277,7 +277,7 @@ site_text_symbol_size := { 24 }
 
 site_text_symbol_alignment := { "middle center" }
 
-site_text_pad_left := { 6 }
+site_text_pad_left := { 10 }
 site_text_pad_top := { 2 }
 site_text_pad_right := { 4 }
 site_text_pad_bottom := { 2 }

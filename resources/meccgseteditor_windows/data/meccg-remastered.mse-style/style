@@ -638,9 +638,9 @@ card style:
 
 	home site:
 		left: { if has_home_site() then 205 else 1000 }
-		top: { if has_home_site() then 883 else 2000 }
+		top: { if has_home_site() then 898 else 2000 }
 		width: 405
-		height: 60
+		height: 45
 		z index: 3
 		alignment: right bottom
 		visible: { has_home_site() }
