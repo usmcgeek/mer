@@ -60,7 +60,8 @@ name_font := {
 }
 
 name_color := {
-	if is_balrog() or is_ringwraith() or is_minionhero() then rgb(255,255,255)
+	if is_minionhero_site() then rgb(0,0,0)
+	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(255,255,255)
 	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0)
 	else rgb(255,255,255)
 }
@@ -75,7 +76,8 @@ name_weight := {
 }
 
 name_shadow_color := {
-	if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0)
+	if is_minionhero_site() then rgb(255,255,255)
+	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0)
 	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255)
 	else rgb(0,0,0)
 }

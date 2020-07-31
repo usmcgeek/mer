@@ -589,11 +589,11 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times Small Caps & Old Style Fi
-			color: { if is_balrog() or is_ringwraith() then rgb(255,255,255) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(255,255,255) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0) else rgb(255,255,255) }
 			size: { if is_avatar() and is_stage() then 20 else 23 }
 			#weight: bold
 			scale down to: 8
-			shadow color: { if is_balrog() or is_ringwraith() then rgb(0,0,0) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
+			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(0,0,0) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
 			shadow displacement x: 2
 			shadow displacement y: 2
 
