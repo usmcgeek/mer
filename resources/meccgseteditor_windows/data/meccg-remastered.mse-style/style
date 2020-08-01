@@ -94,10 +94,10 @@ card style:
 			Hero Ally: /meccg-remastered.mse-include/cards/hero_ally.png
 			Hero Ally DiagonalPB: /meccg-remastered.mse-include/cards/hero_ally.png
 			Hero Avatar Alatar: /meccg-remastered.mse-include/cards/wizard_alatar.png
-			Hero Avatar Gandalf: /meccg-remastered.mse-include/cards/hero_wizard_gandalf.png
+			Hero Avatar Gandalf: /meccg-remastered.mse-include/cards/wizard_gandalf.png
 			Hero Avatar Pallando: /meccg-remastered.mse-include/cards/wizard_pallando.png
-			Hero Avatar Radagast: /meccg-remastered.mse-include/cards/hero_wizard_radagast.png
-			Hero Avatar Saruman: /meccg-remastered.mse-include/cards/hero_wizard_saruman.png
+			Hero Avatar Radagast: /meccg-remastered.mse-include/cards/wizard_radagast.png
+			Hero Avatar Saruman: /meccg-remastered.mse-include/cards/wizard_saruman.png
 			Hero Character: /meccg-remastered.mse-include/cards/hero_character.png
 			Hero Event: /meccg-remastered.mse-include/cards/hero_event.png
 			Hero Faction: /meccg-remastered.mse-include/cards/hero_faction.png
@@ -673,7 +673,6 @@ card style:
 			scale down to: 8
 		line height hard: 1.3
 		line height line: 1.1
-		#mask: mask_home_site.png
 
 ###########################################################################
 ### Prowess and Body

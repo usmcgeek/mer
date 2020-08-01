@@ -10,7 +10,6 @@ include file: language
 	############################################################
 	###Card Categorization Scripts
 	############################################################
-		#is_wizard := { contains(card.background, match: "wizard") }
 		is_region := { contains(card.background, match: "Region") }
 		is_regionvertical := { contains(card.background, match: "RegionVertical") }
 		is_regionhorizontal := { contains(card.background, match: "RegionHorizontal") }
@@ -60,7 +59,12 @@ include file: language
 
 ###############################################################Corruption Icon Scripts
 corruption_icon := {
-	if is_wizard() then "cp_icon_blank.png"
+	if is_gandalf() then "/meccg-remastered.mse-include/cp_icons/cp_icon_gandalf.png"
+	else if is_alatar() then "/meccg-remastered.mse-include/cp_icons/cp_icon_alatar.png"
+	else if is_pallando() then "/meccg-remastered.mse-include/cp_icons/cp_icon_pallando.png"
+	else if is_radagast() then "/meccg-remastered.mse-include/cp_icons/cp_icon_radagast.png"
+	else if is_saruman() then "/meccg-remastered.mse-include/cp_icons/cp_icon_saruman.png"
+	else if is_ringwraith() or is_balrog() then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion_avatar.png"
 	else if (is_minionhero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
 	else if is_greyagent() then "/meccg-remastered.mse-include/cp_icons/cp_icon_greyagent.png"
 	else if is_minionhero() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
