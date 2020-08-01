@@ -483,7 +483,7 @@ card field:
 	show statistics: false
 	save value: false
 	multi line: true
-	script: combined_editor( field1: card.haven, separator1: "<line>\n</line>", field2: card.site_playable, separator2: "<line>\n</line>", field3: card.auto_attack, separator3: "<line>\n</line>", field4: card.special )
+	script: combined_editor( field1: card.haven, separator1: "<line>\n</line>", field2: card.site_playable, separator2: "<line>\n</line>", field3: card.auto_attack, separator3: "<line>\n</line>", field4: card.special, separator4: "<line>\n</line>", field5: card.flavor_text )
 	description: Text
 
 ###########################################################################
