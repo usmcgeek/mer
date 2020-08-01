@@ -81,6 +81,10 @@ corruption_icon := {
 	cardset_icon := {
 		if chosen(choice:"dreamcard", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_coe_dc.png"
 		else if chosen(choice:"custom", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_custom.png"
+		else if chosen(choice:"onering", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_onering.png"
+		else if chosen(choice:"lidlesseye", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_lidlesseye.png"
+		else if chosen(choice:"lure_generic", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_lure_logo.png"
+		else if chosen(choice:"lure_xx", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_lure_2021.png"
 		else "/meccg-remastered.mse-include/card_icons/icon_blank.png"
 		}
 

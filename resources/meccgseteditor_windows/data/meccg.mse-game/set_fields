@@ -39,6 +39,10 @@ set field:
 	description: choose the card icon for lower right
 	choice: default
 	choice: dreamcard
+	choice: onering
+	choice: lidlesseye
+	choice: lure_generic
+	choice: lure_xx
 	choice: custom
 
 set field:
@@ -152,4 +156,8 @@ default set style:
 		choice images:
 			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
 			dreamcard: /meccg-remastered.mse-include/card_icons/icon_coe_dc.png
+			onering: /meccg-remastered.mse-include/card_icons/icon_onering.png
+			lidlesseye: /meccg-remastered.mse-include/card_icons/icon_lidlesseye.png
+			lure_generic: /meccg-remastered.mse-include/card_icons/icon_lure_logo.png
+			lure_xx: /meccg-remastered.mse-include/card_icons/icon_lure_2021.png
 			custom: /meccg-remastered.mse-include/card_icons/icon_custom.png
