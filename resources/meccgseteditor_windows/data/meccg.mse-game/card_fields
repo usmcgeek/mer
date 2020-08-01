@@ -101,7 +101,7 @@ card field:
 		choice: SiteStage
 	description: Type
 	card list visible: true
-	
+
 ###########################################################################
 ### Card Fields
 ###########################################################################
@@ -129,6 +129,23 @@ card field:
 	show statistics: false
 	description: Challenge Deck Letter
 	script: if set.challengedeck != "" then set.challengedeck
+
+###########Promo Card Icon Field
+card field:
+	type: choice
+	name: promo
+	editable: true
+	choice: default
+	choice: promo
+
+############DC Icon Field
+card field:
+	type: choice
+	name: dreamcard
+	editable: true
+	choice: default
+	choice: dreamcard
+	choice: custom
 
 card field:
 	type: choice

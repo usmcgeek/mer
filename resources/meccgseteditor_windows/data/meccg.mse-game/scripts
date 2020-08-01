@@ -77,6 +77,13 @@ corruption_icon := {
 	else "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
 	}
 
+	###############################################################Card Icon Scripts
+	cardset_icon := {
+		if chosen(choice:"dreamcard", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_coe_dc.png"
+		else if chosen(choice:"custom", set.card_icon) then "/meccg-remastered.mse-include/card_icons/icon_custom.png"
+		else "/meccg-remastered.mse-include/card_icons/icon_blank.png"
+		}
+
 ###########################################################Stage avatar unique icons
 stage_unique_icon := {
 	if card.fw == "MG" then "/meccg-remastered.mse-include/stage_res_icons/mgstage.png"

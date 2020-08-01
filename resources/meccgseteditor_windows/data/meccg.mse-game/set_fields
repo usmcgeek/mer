@@ -33,6 +33,13 @@ set field:
 	name: symbol
 	description: Default set symbol (one letter or Space, displayed as a Cirth rune on the lower right)
 
+set field:
+	type: choice
+	name: card icon
+	description: choose the card icon for lower right
+	choice: default
+	choice: dreamcard
+	choice: custom
 
 set field:
 	type: info
@@ -139,3 +146,10 @@ default set style:
 		font:
 			name: Cirth Erebor
 			size: 12
+
+	card icon:
+		render style: both
+		choice images:
+			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
+			dreamcard: /meccg-remastered.mse-include/card_icons/icon_coe_dc.png
+			custom: /meccg-remastered.mse-include/card_icons/icon_custom.png

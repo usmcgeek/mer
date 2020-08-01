@@ -632,6 +632,28 @@ card style:
 			size: 16
 			scale down to: 8
 
+	dreamcard:
+		left: { if is_site() then 650 else 654 }
+		top: { if is_site() then 768 else 789 }
+		width: 25
+		height: 25
+		z index: 1
+		visible: { not is_region() }
+		render style: image
+		image: { cardset_icon() }
+
+	promo:
+		left: { if is_site() then 650 else 654 }
+		top: { if is_site() then 809 else 830 }
+		width: 24
+		height: 24
+		z index: 1
+		visible: { not is_region() }
+		render style: image
+		choice images:
+			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
+			promo: /meccg-remastered.mse-include/card_icons/icon_ice_promo.png
+
 ###########################################################################
 ### Home Site
 ###########################################################################
