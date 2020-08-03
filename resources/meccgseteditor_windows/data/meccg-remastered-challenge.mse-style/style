@@ -641,8 +641,8 @@ card style:
 		visible: { not is_region() }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
-			promo: /meccg-remastered.mse-include/card_icons/icon_ice_promo.png
+			default: /meccg.mse-game/card_icons/icon_blank.png
+			promo: /meccg.mse-game/card_icons/icon_ice_promo.png
 
 ###########################################################################
 ### Home Site

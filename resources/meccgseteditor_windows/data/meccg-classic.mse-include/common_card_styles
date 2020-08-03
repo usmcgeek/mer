@@ -31,13 +31,13 @@ corruption_icon := {
 
 	###############################################################Card Icon Scripts
 	cardset_icon := {
-		if chosen(choice:"dreamcard", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_coe_dc.png"
-		else if chosen(choice:"custom", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_custom.png"
-		else if chosen(choice:"onering", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_onering.png"
-		else if chosen(choice:"lidlesseye", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_lidlesseye.png"
-		else if chosen(choice:"lure_generic", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_lure_logo.png"
-		else if chosen(choice:"lure_xx", set.card_icon) then "/meccg-classic.mse-include/card_icons/icon_lure_2021.png"
-		else "/meccg-classic.mse-include/card_icons/icon_blank.png"
+		if chosen(choice:"dreamcard", set.card_icon) then "/meccg.mse-game/card_icons/icon_coe_dc.png"
+		else if chosen(choice:"custom", set.card_icon) then "/meccg.mse-game/card_icons/icon_custom.png"
+		else if chosen(choice:"onering", set.card_icon) then "/meccg.mse-game/card_icons/icon_onering.png"
+		else if chosen(choice:"lidlesseye", set.card_icon) then "/meccg.mse-game/card_icons/icon_lidlesseye.png"
+		else if chosen(choice:"lure_generic", set.card_icon) then "/meccg.mse-game/card_icons/icon_lure_logo.png"
+		else if chosen(choice:"lure_xx", set.card_icon) then "/meccg.mse-game/card_icons/icon_lure_2021.png"
+		else "/meccg.mse-game/card_icons/icon_blank.png"
 		}
 
 ###########################################################Stage avatar unique icons

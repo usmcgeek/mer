@@ -18,9 +18,6 @@ depends on:
 	package: meccg-icons.mse-symbol-font
 	version: 2018-11-25
 depends on:
-	package: meccg-remastered.mse-include
-	version: 2020-07-26
-depends on:
 	package: meccg-classic.mse-include
 	version: 2020-07-26
 
@@ -621,7 +618,7 @@ card style:
 			#weight: bold
 
 	set:
-		left: { if is_site() then 653 else 660 }
+		left: { if is_site() then 651 else 660 }
 		top: { if is_site() then 842 else 864 }
 		width: 27
 		height: 30
@@ -636,7 +633,7 @@ card style:
 			scale down to: 8
 
 	dreamcard:
-		left: { if is_site() then 654 else 662 }
+		left: { if is_site() then 653 else 662 }
 		top: { if is_site() then 766 else 784 }
 		width: 25
 		height: 25
@@ -646,7 +643,7 @@ card style:
 		image: { cardset_icon() }
 
 	promo:
-		left: { if is_site() then 654 else 662 }
+		left: { if is_site() then 651 else 662 }
 		top: { if is_site() then 809 else 830 }
 		width: 24
 		height: 24
@@ -654,8 +651,8 @@ card style:
 		visible: { not is_region() }
 		render style: image
 		choice images:
-			default: /meccg-classic.mse-include/card_icons/icon_blank.png
-			promo: /meccg-classic.mse-include/card_icons/icon_ice_promo.png
+			default: /meccg.mse-game/card_icons/icon_blank.png
+			promo: /meccg.mse-game/card_icons/icon_ice_promo.png
 
 ###########################################################################
 ### Home Site

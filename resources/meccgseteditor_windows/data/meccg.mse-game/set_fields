@@ -154,10 +154,10 @@ default set style:
 	card icon:
 		render style: both
 		choice images:
-			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
-			dreamcard: /meccg-remastered.mse-include/card_icons/icon_coe_dc.png
-			onering: /meccg-remastered.mse-include/card_icons/icon_onering.png
-			lidlesseye: /meccg-remastered.mse-include/card_icons/icon_lidlesseye.png
-			lure_generic: /meccg-remastered.mse-include/card_icons/icon_lure_logo.png
-			lure_xx: /meccg-remastered.mse-include/card_icons/icon_lure_2021.png
-			custom: /meccg-remastered.mse-include/card_icons/icon_custom.png
+			default: /meccg.mse-game/card_icons/icon_blank.png
+			dreamcard: /meccg.mse-game/card_icons/icon_coe_dc.png
+			onering: /meccg.mse-game/card_icons/icon_onering.png
+			lidlesseye: /meccg.mse-game/card_icons/icon_lidlesseye.png
+			lure_generic: /meccg.mse-game/card_icons/icon_lure_logo.png
+			lure_xx: /meccg.mse-game/card_icons/icon_lure_2021.png
+			custom: /meccg.mse-game/card_icons/icon_custom.png
