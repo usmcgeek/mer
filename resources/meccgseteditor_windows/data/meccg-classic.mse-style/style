@@ -1,7 +1,7 @@
 mse version: 0.3.8
 game: meccg
-full name: JS Remaster
-short name: A - Remastered
+full name: Old MSE Frames
+short name: C - Classic
 icon: icon.png
 position hint: 001
 
@@ -19,6 +19,9 @@ depends on:
 	version: 2018-11-25
 depends on:
 	package: meccg-remastered.mse-include
+	version: 2020-07-26
+depends on:
+	package: meccg-classic.mse-include
 	version: 2020-07-26
 
 #By: Jason Smith
@@ -48,7 +51,7 @@ card dpi: 300
 ###########################################################################
 
 init script:
-	include file: /meccg-remastered.mse-include/common_card_styles
+	include file: /meccg-classic.mse-include/common_card_styles
 
 ###########################################################################
 ### Card Background Image Menu Selections
@@ -83,65 +86,65 @@ card style:
 		render style: image
 		popup style: in place
 		choice images:
-			Region RegionVertical: /meccg-remastered.mse-include/regions/region_vertical.png
-			Region RegionHorizontal: /meccg-remastered.mse-include/regions/region_horizontal.png
-			Hazard Agent: /meccg-remastered.mse-include/cards/hazard_agent_haz.png
-			Hazard Agent Haz: /meccg-remastered.mse-include/cards/hazard_agent_haz.png
-			Hazard Agent Minion: /meccg-remastered.mse-include/cards/hazard_agent_minion.png
-			Hazard Creature: /meccg-remastered.mse-include/cards/hazard_creature.png
-			Hazard Creature DiagonalPB: /meccg-remastered.mse-include/cards/hazard_creature.png
-			Hazard Event: /meccg-remastered.mse-include/cards/hazard_event.png
-			Hero Ally: /meccg-remastered.mse-include/cards/hero_ally.png
-			Hero Ally DiagonalPB: /meccg-remastered.mse-include/cards/hero_ally.png
-			Hero Avatar Alatar: /meccg-remastered.mse-include/cards/wizard_alatar.png
-			Hero Avatar Gandalf: /meccg-remastered.mse-include/cards/wizard_gandalf.png
-			Hero Avatar Pallando: /meccg-remastered.mse-include/cards/wizard_pallando.png
-			Hero Avatar Radagast: /meccg-remastered.mse-include/cards/wizard_radagast.png
-			Hero Avatar Saruman: /meccg-remastered.mse-include/cards/wizard_saruman.png
-			Hero Character: /meccg-remastered.mse-include/cards/hero_character.png
-			Hero Event: /meccg-remastered.mse-include/cards/hero_event.png
-			Hero Faction: /meccg-remastered.mse-include/cards/hero_faction.png
-			Hero Item: /meccg-remastered.mse-include/cards/hero_item.png
-			Hero Item DiagonalPB: /meccg-remastered.mse-include/cards/hero_item.png
-			Hero Site: /meccg-remastered.mse-include/cards/hero_site.png
-			MinionHero Ally: /meccg-remastered.mse-include/cards/minionhero_ally.png
-			MinionHero Ally DiagonalPB: /meccg-remastered.mse-include/cards/minionhero_ally.png
-			MinionHero Event: /meccg-remastered.mse-include/cards/minionhero_event.png
-			MinionHero Faction: /meccg-remastered.mse-include/cards/minionhero_faction.png
-			MinionHero Item: /meccg-remastered.mse-include/cards/minionhero_item.png
-			MinionHero Item DiagonalPB: /meccg-remastered.mse-include/cards/minionhero_item.png
-			MinionHero Character: /meccg-remastered.mse-include/cards/minionhero_character.png
-			MinionHero Grey Agent: /meccg-remastered.mse-include/cards/grey_agent.png
-			MinionHero SiteMH: /meccg-remastered.mse-include/cards/minionhero_site.png
-			Minion Ally: /meccg-remastered.mse-include/cards/minion_ally.png
-			Minion Ally DiagonalPB: /meccg-remastered.mse-include/cards/minion_ally.png
-			Minion Avatar Balrog: /meccg-remastered.mse-include/cards/minion_avatar.png
-			Minion Avatar Ringwraith: /meccg-remastered.mse-include/cards/minion_avatar.png
-			Minion Character: /meccg-remastered.mse-include/cards/minion_character.png
-			Minion MECA Character: /meccg-remastered.mse-include/cards/meca_character.png
-			Minion Event: /meccg-remastered.mse-include/cards/minion_event.png
-			Minion Faction: /meccg-remastered.mse-include/cards/minion_faction.png
-			Minion Item: /meccg-remastered.mse-include/cards/minion_item.png
-			Minion Item DiagonalPB: /meccg-remastered.mse-include/cards/minion_item.png
-			Minion Site BalrogSite: /meccg-remastered.mse-include/cards/minion_site_balrog.png
-			Minion Site MinionSite: /meccg-remastered.mse-include/cards/minion_site_minion.png
-			Stage Ally: /meccg-remastered.mse-include/cards/stage_ally.png
-			Stage Ally DiagonalPB: /meccg-remastered.mse-include/cards/stage_ally.png
-			Stage Avatar Dunadanlord: /meccg-remastered.mse-include/cards/dunadan_lord.png
-			Stage Avatar Manlord: /meccg-remastered.mse-include/cards/man-lord.png
-			Stage Avatar Elflord: /meccg-remastered.mse-include/cards/elflord.png
-			Stage Avatar Dwarflord: /meccg-remastered.mse-include/cards/dwarflord.png
-			Stage Avatar Alatar: /meccg-remastered.mse-include/cards/wizard_alatar.png
-			Stage Avatar Gandalf: /meccg-remastered.mse-include/cards/wizard_gandalf.png
-			Stage Avatar Pallando: /meccg-remastered.mse-include/cards/wizard_pallando.png
-			Stage Avatar Radagast: /meccg-remastered.mse-include/cards/wizard_radagast.png
-			Stage Avatar Saruman: /meccg-remastered.mse-include/cards/wizard_saruman.png
-			Stage Avatar Dragonlord: /meccg-remastered.mse-include/cards/dragonlord.png
-			Stage Event: /meccg-remastered.mse-include/cards/stage_event.png
-			Stage Faction: /meccg-remastered.mse-include/cards/stage_faction.png
-			Stage Item: /meccg-remastered.mse-include/cards/stage_item.png
-			Stage Item DiagonalPB: /meccg-remastered.mse-include/cards/stage_item.png
-			Stage SiteStage: /meccg-remastered.mse-include/cards/stage_site.png
+			Region RegionVertical: /meccg-classic.mse-include/regions/region_vertical.png
+			Region RegionHorizontal: /meccg-classic.mse-include/regions/region_horizontal.png
+			Hazard Agent: /meccg-classic.mse-include/cards/hazard_agent_haz.png
+			Hazard Agent Haz: /meccg-classic.mse-include/cards/hazard_agent_haz.png
+			Hazard Agent Minion: /meccg-classic.mse-include/cards/hazard_agent_minion.png
+			Hazard Creature: /meccg-classic.mse-include/cards/hazard_creature.png
+			Hazard Creature DiagonalPB: /meccg-classic.mse-include/cards/hazard_creature.png
+			Hazard Event: /meccg-classic.mse-include/cards/hazard_event.png
+			Hero Ally: /meccg-classic.mse-include/cards/hero_ally.png
+			Hero Ally DiagonalPB: /meccg-classic.mse-include/cards/hero_ally.png
+			Hero Avatar Alatar: /meccg-classic.mse-include/cards/wizard_alatar.png
+			Hero Avatar Gandalf: /meccg-classic.mse-include/cards/wizard_gandalf.png
+			Hero Avatar Pallando: /meccg-classic.mse-include/cards/wizard_pallando.png
+			Hero Avatar Radagast: /meccg-classic.mse-include/cards/wizard_radagast.png
+			Hero Avatar Saruman: /meccg-classic.mse-include/cards/wizard_saruman.png
+			Hero Character: /meccg-classic.mse-include/cards/hero_character.png
+			Hero Event: /meccg-classic.mse-include/cards/hero_event.png
+			Hero Faction: /meccg-classic.mse-include/cards/hero_faction.png
+			Hero Item: /meccg-classic.mse-include/cards/hero_item.png
+			Hero Item DiagonalPB: /meccg-classic.mse-include/cards/hero_item.png
+			Hero Site: /meccg-classic.mse-include/cards/hero_site.png
+			MinionHero Ally: /meccg-classic.mse-include/cards/minionhero_ally.png
+			MinionHero Ally DiagonalPB: /meccg-classic.mse-include/cards/minionhero_ally.png
+			MinionHero Event: /meccg-classic.mse-include/cards/minionhero_event.png
+			MinionHero Faction: /meccg-classic.mse-include/cards/minionhero_faction.png
+			MinionHero Item: /meccg-classic.mse-include/cards/minionhero_item.png
+			MinionHero Item DiagonalPB: /meccg-classic.mse-include/cards/minionhero_item.png
+			MinionHero Character: /meccg-classic.mse-include/cards/minionhero_character.png
+			MinionHero Grey Agent: /meccg-classic.mse-include/cards/grey_agent.png
+			MinionHero SiteMH: /meccg-classic.mse-include/cards/minionhero_site.png
+			Minion Ally: /meccg-classic.mse-include/cards/minion_ally.png
+			Minion Ally DiagonalPB: /meccg-classic.mse-include/cards/minion_ally.png
+			Minion Avatar Balrog: /meccg-classic.mse-include/cards/minion_avatar.png
+			Minion Avatar Ringwraith: /meccg-classic.mse-include/cards/minion_avatar.png
+			Minion Character: /meccg-classic.mse-include/cards/minion_character.png
+			Minion MECA Character: /meccg-classic.mse-include/cards/meca_character.png
+			Minion Event: /meccg-classic.mse-include/cards/minion_event.png
+			Minion Faction: /meccg-classic.mse-include/cards/minion_faction.png
+			Minion Item: /meccg-classic.mse-include/cards/minion_item.png
+			Minion Item DiagonalPB: /meccg-classic.mse-include/cards/minion_item.png
+			Minion Site BalrogSite: /meccg-classic.mse-include/cards/minion_site_balrog.png
+			Minion Site MinionSite: /meccg-classic.mse-include/cards/minion_site_minion.png
+			Stage Ally: /meccg-classic.mse-include/cards/stage_ally.png
+			Stage Ally DiagonalPB: /meccg-classic.mse-include/cards/stage_ally.png
+			Stage Avatar Dunadanlord: /meccg-classic.mse-include/cards/dunadan_lord.png
+			Stage Avatar Manlord: /meccg-classic.mse-include/cards/man-lord.png
+			Stage Avatar Elflord: /meccg-classic.mse-include/cards/elflord.png
+			Stage Avatar Dwarflord: /meccg-classic.mse-include/cards/dwarflord.png
+			Stage Avatar Alatar: /meccg-classic.mse-include/cards/wizard_alatar.png
+			Stage Avatar Gandalf: /meccg-classic.mse-include/cards/wizard_gandalf.png
+			Stage Avatar Pallando: /meccg-classic.mse-include/cards/wizard_pallando.png
+			Stage Avatar Radagast: /meccg-classic.mse-include/cards/wizard_radagast.png
+			Stage Avatar Saruman: /meccg-classic.mse-include/cards/wizard_saruman.png
+			Stage Avatar Dragonlord: /meccg-classic.mse-include/cards/dragonlord.png
+			Stage Event: /meccg-classic.mse-include/cards/stage_event.png
+			Stage Faction: /meccg-classic.mse-include/cards/stage_faction.png
+			Stage Item: /meccg-classic.mse-include/cards/stage_item.png
+			Stage Item DiagonalPB: /meccg-classic.mse-include/cards/stage_item.png
+			Stage SiteStage: /meccg-classic.mse-include/cards/stage_site.png
 
 ###########################################################################
 ### Normal Card Title / Name
@@ -324,7 +327,7 @@ card style:
 			weight: bold
 
 	draw:
-		left: { if is_site() then 76 else 1000 }
+		left: { if is_site() then 79 else 1000 }
 		top: { if is_site() then 918 else 1000 }
 		width: 61
 		height: 50
@@ -347,7 +350,7 @@ card style:
 		width: { if is_site() then 515 else 534 }
 		height: { if is_site() then 436 else 453 }
 		visible: { not is_region()}
-		mask: { if is_site() then "/meccg-remastered.mse-include/masks/site_card_picture_mask.png" else "/meccg-remastered.mse-include/masks/card_picture_mask.png" }
+		mask: { if is_site() then "/meccg-classic.mse-include/masks/site_card_picture_mask.png" else "/meccg-classic.mse-include/masks/card_picture_mask.png" }
 
 ###########################################################################
 ### Hazard Creature Playable Site/Region Icons
@@ -421,8 +424,8 @@ card style:
 		visible: { has_mind() and card.mind != "" }
 		render style: image
 		choice images:
-			normal: /meccg-remastered.mse-include/mind.png
-			black: /meccg-remastered.mse-include/mind2.png
+			normal: /meccg-classic.mse-include/mind.png
+			black: /meccg-classic.mse-include/mind2.png
 
 # General Influence
 	influenceg:
@@ -449,7 +452,7 @@ card style:
 		visible: { has_influenceg() and card.influenceg != "" }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/influence_general.png
+			default: /meccg-classic.mse-include/influence_general.png
 
 # Direct Influence
 	influence:
@@ -476,7 +479,7 @@ card style:
 		visible: { has_influence() and	card.influence != "" }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/influence.png
+			default: /meccg-classic.mse-include/influence.png
 
 	influence bracket icon:
 		left: { if has_influence() then 62 else 1000 }
@@ -488,8 +491,8 @@ card style:
 		render style: image
 		popup style: in place
 		choice images:
-			Unrestricted: /meccg-remastered.mse-include/empty.png
-			Restricted: /meccg-remastered.mse-include/restricted.png
+			Unrestricted: /meccg-classic.mse-include/empty.png
+			Restricted: /meccg-classic.mse-include/restricted.png
 
 # Second Direct Influence Field
 	influence2:
@@ -516,7 +519,7 @@ card style:
 		visible: { has_influence2() and	card.influence2 != "" }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/influence.png
+			default: /meccg-classic.mse-include/influence.png
 
 	influence bracket icon2:
 		left: { if has_influence2() then 65 else 1000 }
@@ -528,8 +531,8 @@ card style:
 		render style: image
 		popup style: in place
 		choice images:
-			Unrestricted: /meccg-remastered.mse-include/empty.png
-			Restricted: /meccg-remastered.mse-include/restricted2.png
+			Unrestricted: /meccg-classic.mse-include/empty.png
+			Restricted: /meccg-classic.mse-include/restricted2.png
 
 # Stage Points
 	sp:
@@ -555,7 +558,7 @@ card style:
 		visible: { has_sp() and card.sp != "" }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/sp.png
+			default: /meccg-classic.mse-include/sp.png
 
 # Fallen Wizard Field for Unique Resources
 	fw:
@@ -602,8 +605,8 @@ card style:
 ###########################################################################
 
 	random:
-		left: { if is_site() or is_region() then 1000 else 653 }
-		top: 714
+		left: { if is_site() or is_region() then 1000 else 660 }
+		top: 706
 		width: 27
 		height: 27
 		z index: 1
@@ -618,7 +621,7 @@ card style:
 			#weight: bold
 
 	set:
-		left: { if is_site() then 647 else 652 }
+		left: { if is_site() then 653 else 660 }
 		top: { if is_site() then 842 else 864 }
 		width: 27
 		height: 30
@@ -633,8 +636,8 @@ card style:
 			scale down to: 8
 
 	dreamcard:
-		left: { if is_site() then 650 else 654 }
-		top: { if is_site() then 768 else 789 }
+		left: { if is_site() then 654 else 662 }
+		top: { if is_site() then 766 else 784 }
 		width: 25
 		height: 25
 		z index: 1
@@ -643,7 +646,7 @@ card style:
 		image: { cardset_icon() }
 
 	promo:
-		left: { if is_site() then 650 else 654 }
+		left: { if is_site() then 654 else 662 }
 		top: { if is_site() then 809 else 830 }
 		width: 24
 		height: 24
@@ -651,8 +654,8 @@ card style:
 		visible: { not is_region() }
 		render style: image
 		choice images:
-			default: /meccg-remastered.mse-include/card_icons/icon_blank.png
-			promo: /meccg-remastered.mse-include/card_icons/icon_ice_promo.png
+			default: /meccg-classic.mse-include/card_icons/icon_blank.png
+			promo: /meccg-classic.mse-include/card_icons/icon_ice_promo.png
 
 ###########################################################################
 ### Home Site
