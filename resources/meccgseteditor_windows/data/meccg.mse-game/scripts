@@ -56,7 +56,7 @@ include file: language
 		is_radagast := { contains(card.background, match: "Radagast") }
 		is_saruman := { contains(card.background, match: "Saruman") }
 		is_wizard := { is_gandalf() or is_alatar() or is_pallando() or is_radagast() or is_saruman() }
-
+		is_meca := { contains(card.background, match: "MECA")}
 
 ############################################################## Card number
 

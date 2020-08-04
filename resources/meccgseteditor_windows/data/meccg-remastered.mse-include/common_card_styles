@@ -9,6 +9,7 @@ corruption_icon := {
 	else if is_radagast() then "/meccg-remastered.mse-include/cp_icons/cp_icon_radagast.png"
 	else if is_saruman() then "/meccg-remastered.mse-include/cp_icons/cp_icon_saruman.png"
 	else if is_ringwraith() or is_balrog() then "/meccg-remastered.mse-include/cp_icons/cp_icon_minion_avatar.png"
+	else if is_meca() then "/meccg-remastered.mse-include/cp_icons/cp_icon_elflord.png"
 	else if (is_minionhero() and is_character()) then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero_character.png"
 	else if is_greyagent() then "/meccg-remastered.mse-include/cp_icons/cp_icon_greyagent.png"
 	else if is_minionhero() then "/meccg-remastered.mse-include/cp_icons/cp_icon_hero.png"
