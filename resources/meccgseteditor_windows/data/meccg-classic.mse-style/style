@@ -85,12 +85,12 @@ card style:
 		choice images:
 			Region RegionVertical: /meccg-classic.mse-include/regions/region_vertical.png
 			Region RegionHorizontal: /meccg-classic.mse-include/regions/region_horizontal.png
-			Hazard Agent: /meccg-classic.mse-include/cards/hazard_agent_haz.png
-			Hazard Agent Haz: /meccg-classic.mse-include/cards/hazard_agent_haz.png
+			Hazard Agent: /meccg-classic.mse-include/cards/hazard.png
+			Hazard Agent Haz: /meccg-classic.mse-include/cards/hazard.png
 			Hazard Agent Minion: /meccg-classic.mse-include/cards/minion_character.png
-			Hazard Creature: /meccg-classic.mse-include/cards/hazard_creature.png
-			Hazard Creature DiagonalPB: /meccg-classic.mse-include/cards/hazard_creature.png
-			Hazard Event: /meccg-classic.mse-include/cards/hazard_event.png
+			Hazard Creature: /meccg-classic.mse-include/cards/hazard.png
+			Hazard Creature DiagonalPB: /meccg-classic.mse-include/cards/hazard.png
+			Hazard Event: /meccg-classic.mse-include/cards/hazard.png
 			Hero Ally: /meccg-classic.mse-include/cards/hero_ally.png
 			Hero Ally DiagonalPB: /meccg-classic.mse-include/cards/hero_ally.png
 			Hero Avatar Alatar: /meccg-classic.mse-include/cards/wizard_alatar.png
@@ -368,7 +368,7 @@ card style:
 			weight: bold
 			scale down to: 8
 		symbol font:
-			name: meccg-icons
+			name: meccghq-icons
 			size: 36
 			alignment: middle center
 		direction: top to bottom

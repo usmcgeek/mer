@@ -142,7 +142,7 @@ card field:
 card field:
 	type: choice
 	name: dreamcard
-	editable: true
+	editable: false
 	choice: default
 	choice: dreamcard
 	choice: custom
