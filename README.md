@@ -19,6 +19,13 @@
  * Added support for French, German, and Spanish spell check dictionaries
  * Auto-replace to add special characters (fix Dunadan, Nazgul, etc, automatically)
 
+## 4 Aug 2020
+ * Added upscaled version of the classic frames from the old templates
+ * Adding more Corruption Icon modifier images
+ * Updated Black and White color values and icons
+ * Consolidate duplicate files
+ * Added ICE Promo logo option
+ * Added Card Icons for set
 
 ## 25 July 2020
  * Reuploaded completed sets and images with corrections
