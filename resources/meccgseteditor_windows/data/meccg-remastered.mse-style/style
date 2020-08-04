@@ -87,7 +87,7 @@ card style:
 			Region RegionHorizontal: /meccg-remastered.mse-include/regions/region_horizontal.png
 			Hazard Agent: /meccg-remastered.mse-include/cards/hazard.png
 			Hazard Agent Haz: /meccg-remastered.mse-include/cards/hazard.png
-			Hazard Agent Minion: /meccg-remastered.mse-include/cards/hazard_agent_minion.png
+			Hazard Agent Minion: /meccg-remastered.mse-include/cards/minion_character.png
 			Hazard Creature: /meccg-remastered.mse-include/cards/hazard.png
 			Hazard Creature DiagonalPB: /meccg-remastered.mse-include/cards/hazard.png
 			Hazard Event: /meccg-remastered.mse-include/cards/hazard.png

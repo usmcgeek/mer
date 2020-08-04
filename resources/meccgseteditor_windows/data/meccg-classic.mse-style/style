@@ -87,7 +87,7 @@ card style:
 			Region RegionHorizontal: /meccg-classic.mse-include/regions/region_horizontal.png
 			Hazard Agent: /meccg-classic.mse-include/cards/hazard_agent_haz.png
 			Hazard Agent Haz: /meccg-classic.mse-include/cards/hazard_agent_haz.png
-			Hazard Agent Minion: /meccg-classic.mse-include/cards/hazard_agent_minion.png
+			Hazard Agent Minion: /meccg-classic.mse-include/cards/minion_character.png
 			Hazard Creature: /meccg-classic.mse-include/cards/hazard_creature.png
 			Hazard Creature DiagonalPB: /meccg-classic.mse-include/cards/hazard_creature.png
 			Hazard Event: /meccg-classic.mse-include/cards/hazard_event.png
