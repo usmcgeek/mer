@@ -66,6 +66,9 @@ set field:
 		name: Black - Limited
 		color: rgb(0,0,0)
 	choice:
+		name: Classic Print Black
+		color: rgb(54,43,57)
+	choice:
 		name: Blue - Unlimited
 		color: rgb(0,71,124)
 	choice:

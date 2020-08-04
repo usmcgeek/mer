@@ -277,12 +277,12 @@ region_picture_mask := {
 ###########################################################################
 
 site_type_left := {
-	if is_site() then 75
+	if is_site() then 79
 	else 1000
 }
 
 site_type_top := {
-	if is_site() then 70
+	if is_site() then 73
 	else 1000
 }
 

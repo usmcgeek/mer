@@ -602,7 +602,7 @@ card style:
 ###########################################################################
 
 	random:
-		left: { if is_site() or is_region() then 1000 else 660 }
+		left: { if is_site() or is_region() then 1000 else 655 }
 		top: 706
 		width: 27
 		height: 27
@@ -618,7 +618,7 @@ card style:
 			#weight: bold
 
 	set:
-		left: { if is_site() then 651 else 660 }
+		left: { if is_site() then 651 else 654 }
 		top: { if is_site() then 842 else 864 }
 		width: 27
 		height: 30
@@ -633,7 +633,7 @@ card style:
 			scale down to: 8
 
 	dreamcard:
-		left: { if is_site() then 653 else 662 }
+		left: { if is_site() then 653 else 656 }
 		top: { if is_site() then 766 else 784 }
 		width: 25
 		height: 25
@@ -643,7 +643,7 @@ card style:
 		image: { cardset_icon() }
 
 	promo:
-		left: { if is_site() then 651 else 662 }
+		left: { if is_site() then 651 else 656 }
 		top: { if is_site() then 809 else 830 }
 		width: 24
 		height: 24
@@ -766,7 +766,7 @@ card style:
 
 	cp:
 		left: { if is_site() or is_region() then 1000 else if is_hero() then 630 else 630 }
-		top: 945
+		top: 949
 		width: 60
 		height: 50
 		z index: 3
@@ -781,8 +781,8 @@ card style:
 			scale down to: 8
 
 	cp icon:
-		left: {if is_site() or is_region() then 2000 else 626 }
-		top: 936
+		left: {if is_site() or is_region() then 2000 else 624 }
+		top: 938
 		width: 70
 		height: 63
 		z index: 2
