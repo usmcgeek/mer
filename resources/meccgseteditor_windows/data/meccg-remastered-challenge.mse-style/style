@@ -85,12 +85,12 @@ card style:
 		choice images:
 			Region RegionVertical: /meccg-remastered.mse-include/regions/region_vertical.png
 			Region RegionHorizontal: /meccg-remastered.mse-include/regions/region_horizontal.png
-			Hazard Agent: /meccg-remastered.mse-include/cards/hazard_agent_haz.png
-			Hazard Agent Haz: /meccg-remastered.mse-include/cards/hazard_agent_haz.png
+			Hazard Agent: /meccg-remastered.mse-include/cards/hazard.png
+			Hazard Agent Haz: /meccg-remastered.mse-include/cards/hazard.png
 			Hazard Agent Minion: /meccg-remastered.mse-include/cards/hazard_agent_minion.png
-			Hazard Creature: /meccg-remastered.mse-include/cards/hazard_creature.png
-			Hazard Creature DiagonalPB: /meccg-remastered.mse-include/cards/hazard_creature.png
-			Hazard Event: /meccg-remastered.mse-include/cards/hazard_event.png
+			Hazard Creature: /meccg-remastered.mse-include/cards/hazard.png
+			Hazard Creature DiagonalPB: /meccg-remastered.mse-include/cards/hazard.png
+			Hazard Event: /meccg-remastered.mse-include/cards/hazard.png
 			Hero Ally: /meccg-remastered.mse-include/cards/hero_ally.png
 			Hero Ally DiagonalPB: /meccg-remastered.mse-include/cards/hero_ally.png
 			Hero Avatar Alatar: /meccg-remastered.mse-include/cards/wizard_alatar.png
@@ -318,7 +318,7 @@ card style:
 		visible: { is_site() }
 		font:
 			name: Times New Roman 180
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: 28
 			scale down to: 8
 			weight: bold
@@ -333,7 +333,7 @@ card style:
 		visible: { is_site() }
 		font:
 			name: Times New Roman
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 28
 			scale down to: 8
 			weight: bold
@@ -363,7 +363,7 @@ card style:
 		always symbol: true
 		font:
 			name: MECCGBold
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 30
 			weight: bold
 			scale down to: 8
@@ -390,7 +390,7 @@ card style:
 		font:
 			name: Times New Roman
 			#weight: bold
-			color: { if (is_minionhero() and is_agent() ) then rgb(0,0,0) else if is_minionhero() then rgb(255,255,255) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(0,0,0) else rgb(255,255,255)}
+			color: { if (is_minionhero() and is_agent() ) then rgb(13,11,14) else if is_minionhero() then rgb(239,239,239) else if is_hero() or is_stage() or (is_minionhero() and is_agent() ) then rgb(13,11,14) else rgb(239,239,239)}
 			size: { if is_item() then (40 - (length(card.mp) * 2)) else (40 - (length(card.mp) * 3)) }
 			#size: 40
 			scale down to: 8
@@ -407,7 +407,7 @@ card style:
 		visible: { not is_fallenwizard() }
 		font:
 			name: MECCGBold
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 25
 			weight: bold
 			scale down to: 8
@@ -435,7 +435,7 @@ card style:
 		visible: { not is_region()}
 		font:
 			name: MECCGBold
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 20
 			weight: bold
 			scale down to: 8
@@ -462,7 +462,7 @@ card style:
 		visible: { not is_region()}
 		font:
 			name: MECCGBold
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: { if is_item() then 16 else if is_dreamcard() then 20 else if is_avatar() and is_hero() then 14 else 20 }
 			weight: bold
 			scale down to: 8
@@ -502,7 +502,7 @@ card style:
 		visible: { is_item() or is_dreamcard() }
 		font:
 			name: MECCGBold
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: 16
 			weight: bold
 			scale down to: 8
@@ -541,7 +541,7 @@ card style:
 		alignment: center shrink-overflow
 		font:
 			name: MECCGBold
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 26
 			weight: bold
 			scale down to: 8
@@ -589,11 +589,11 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times Small Caps & Old Style Fi
-			color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(255,255,255) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(239,239,239) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(13,11,14) else rgb(239,239,239) }
 			size: { if is_avatar() and is_stage() then 20 else 23 }
 			#weight: bold
 			scale down to: 8
-			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(0,0,0) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255) else rgb(0,0,0) }
+			shadow color: { if is_balrog() or is_ringwraith() or is_minionhero_site() then rgb(13,11,14) else if is_avatar() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(239,239,239) else rgb(13,11,14) }
 			shadow displacement x: 2
 			shadow displacement y: 2
 
@@ -612,7 +612,7 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: MECCGBold
-			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_hero() or is_stage() then rgb(13,11,14) else rgb(239,239,239) }
 			size: 15
 			scale down to: 8
 			#weight: bold
@@ -658,7 +658,7 @@ card style:
 		visible: { has_home_site() }
 		font:
 			name: Times New Roman
-			color: rgb(0,0,0)
+			color: rgb(13,11,14)
 			size: 18
 			scale down to: 8
 		line height hard: 1.3
@@ -680,13 +680,13 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times New Roman
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: { 32 - (length(card.prowess) + length(card.body)) }
 			#size: 32
 			#weight: bold
 			scale down to: 8
 			separator color: rgb(200,0,0)
-			shadow color: rgb(0,0,0)
+			shadow color: rgb(13,11,14)
 			shadow displacement x: 1
 			shadow displacement y: 1
 
@@ -701,13 +701,13 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times New Roman
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: { 32 - (length(card.prowess) + length(card.body)) }
 			#size: 32
 			#weight: bold
 			scale down to: 8
 			separator color: rgb(200,0,0)
-			shadow color: rgb(0,0,0)
+			shadow color: rgb(13,11,14)
 			shadow displacement x: 1
 			shadow displacement y: 1
 
@@ -723,12 +723,12 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times New Roman
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: { 32 - (length(card.prowess) + length(card.body)) }
 			#size: 32
 			scale down to: 8
 			separator color: rgb(200,0,0)
-			shadow color: rgb(0,0,0)
+			shadow color: rgb(13,11,14)
 			shadow displacement x: 1
 			shadow displacement y: 1
 
@@ -742,12 +742,12 @@ card style:
 		visible: { card.prowess != "" and has_diagonalprowess() }
 		font:
 			name: Times New Roman
-			color: rgb(255,255,255)
+			color: rgb(239,239,239)
 			size: { 32 - (length(card.prowess) + length(card.body)) }
 			#size: 32
 			scale down to: 8
 			separator color: rgb(200,0,0)
-			shadow color: rgb(0,0,0)
+			shadow color: rgb(13,11,14)
 			shadow displacement x: 1
 			shadow displacement y: 1
 
@@ -766,7 +766,7 @@ card style:
 		visible: { not is_region() }
 		font:
 			name: Times New Roman
-			color: { if is_hero() or is_stage() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_hero() or is_stage() then rgb(13,11,14) else rgb(239,239,239) }
 			#weight: bold
 			size: 28
 			scale down to: 8
@@ -795,7 +795,7 @@ card style:
 		alignment: center shrink-overflow
 		font:
 			name: Times Small Caps & Old Style Fi
-			color: { if is_balrog() or is_ringwraith() then rgb(255,255,255) else if is_avatar() or (is_minionhero() and is_agent() ) or ( is_hero() and is_character() or is_site() or is_region() ) then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_balrog() or is_ringwraith() then rgb(239,239,239) else if is_avatar() or (is_minionhero() and is_agent() ) or ( is_hero() and is_character() or is_site() or is_region() ) then rgb(13,11,14) else rgb(239,239,239) }
 			size: { if is_region() then 20 else 16 }
 			scale down to: 4
 
@@ -809,12 +809,12 @@ card style:
 		alignment: left
 		font:
 			name: Arial
-			#color: { if is_hero() then rgb(0,0,0) else rgb(255,255,255) }
-			color: { if is_region() then rgb(0,0,0) else rgb(255,255,255) }
+			#color: { if is_hero() then rgb(13,11,14) else rgb(239,239,239) }
+			color: { if is_region() then rgb(13,11,14) else rgb(239,239,239) }
 			weight: bold
 			size: 13
 			scale down to: 6
-			shadow color: { if is_region() then rgb(255,255,255) else rgb(0,0,0) }
+			shadow color: { if is_region() then rgb(239,239,239) else rgb(13,11,14) }
 			shadow displacement x: 1
 			shadow displacement y: 1
 
@@ -833,11 +833,11 @@ card style:
 		alignment: left
 		font:
 			name: Arial
-			color: { if is_region() then rgb(0,0,0) else rgb(255,255,255) }
+			color: { if is_region() then rgb(13,11,14) else rgb(239,239,239) }
 			weight: bold
 			size: 13
 			scale down to: 6
-			shadow color: { if is_region() then rgb(255,255,255) else rgb(0,0,0) }
+			shadow color: { if is_region() then rgb(239,239,239) else rgb(13,11,14) }
 			shadow displacement x: 1
 			shadow displacement y: 1
 

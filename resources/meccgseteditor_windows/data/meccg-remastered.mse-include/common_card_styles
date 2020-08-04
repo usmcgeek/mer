@@ -64,9 +64,9 @@ symbol_font := {
 ####################################################################
 
 challenge_font := {
-	if chosen(choice:"default", card.challengedeckicon) then rgb(0,0,0)
-	else if chosen(choice:"sideboard", card.challengedeckicon) then rgb(255,255,255)
-	else rgb(255,255,255)
+	if chosen(choice:"default", card.challengedeckicon) then rgb(13,11,14)
+	else if chosen(choice:"sideboard", card.challengedeckicon) then rgb(239,239,239)
+	else rgb(239,239,239)
 }
 
 ####################################################################
@@ -109,10 +109,10 @@ name_font := {
 }
 
 name_color := {
-	if is_minionhero_site() then rgb(0,0,0)
-	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(255,255,255)
-	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(0,0,0)
-	else rgb(255,255,255)
+	if is_minionhero_site() then rgb(13,11,14)
+	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(239,239,239)
+	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(13,11,14)
+	else rgb(239,239,239)
 }
 
 name_size := {
@@ -125,10 +125,10 @@ name_weight := {
 }
 
 name_shadow_color := {
-	if is_minionhero_site() then rgb(255,255,255)
-	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(0,0,0)
-	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(255,255,255)
-	else rgb(0,0,0)
+	if is_minionhero_site() then rgb(239,239,239)
+	else if is_balrog() or is_ringwraith() or is_minionhero() then rgb(13,11,14)
+	else if is_avatar() or is_region() or ( is_hero() and ( is_character() or is_site() ) ) then rgb(239,239,239)
+	else rgb(13,11,14)
 }
 
 ################################################################
@@ -181,7 +181,7 @@ text_font := {
 
 text_color := {
 	if is_region() then rgb(66,65,49)
-	else rgb(0,0,0)
+	else rgb(13,11,14)
 }
 
 text_size := {
@@ -217,7 +217,7 @@ flavor_text_font := {
 	"Times New Roman"
 }
 
-flavor_text_color := { rgb(0,0,0) }
+flavor_text_color := { rgb(13,11,14) }
 
 flavor_text_size := { 18 }
 
@@ -290,7 +290,7 @@ site_type_alignment := { "top center" }
 
 site_type_font := { "MECCGBold" }
 
-site_type_font_color := { rgb(0,0,0) }
+site_type_font_color := { rgb(13,11,14) }
 
 site_type_font_size := { 22 }
 
@@ -320,7 +320,7 @@ site_text_height := { 306 }
 
 site_text_font := { "Times New Roman" }
 
-site_text_font_color := { rgb(0,0,0) }
+site_text_font_color := { rgb(13,11,14) }
 
 site_text_font_size := { 22 }
 
@@ -357,7 +357,7 @@ site_path_alignment := { "top center" }
 site_path_line_height_soft := { 1.2 }
 
 site_path_font := { "MECCGBold" }
-site_path_font_color := { rgb(0,0,0) }
+site_path_font_color := { rgb(13,11,14) }
 site_path_font_size := { 30 }
 site_path_font_weight := { "bold" }
 

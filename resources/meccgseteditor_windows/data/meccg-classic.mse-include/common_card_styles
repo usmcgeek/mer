@@ -3,7 +3,7 @@
 ###################################
 
 #Note: Colors
-#White rgb(255,255,255) replaced with rgb(255,250,246)
+#White rgb(255,250,246) replaced with rgb(255,250,246)
 #Black rgb(0,0,0) replaced with rbg(54,43,57)
 ###############################################################Corruption Icon Scripts
 corruption_icon := {
@@ -60,7 +60,7 @@ stage_unique_icon := {
 ###################################################################
 
 symbol_font := {
-	"meccg-icons"
+	"meccghq-icons"
 }
 
 ####################################################################
