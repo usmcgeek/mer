@@ -1,5 +1,9 @@
 # Middle Earth Remastered Repo
 
+# 29 Sept 2020
+ * Uploaded Lidless Eye Set Part 1 (Thanks Gary!)
+ * Lidless Eye Part 2 still getting proofed
+
 # 7 Aug 2020
  * Reorganization of data folder
  * Moved Remastered into separate folder
