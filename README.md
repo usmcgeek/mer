@@ -1,5 +1,8 @@
 # Middle Earth Remastered Repo
 
+# April 2021
+ * Uploaded corrected map with Imlad Morgul fixed.
+
 # November 2020
  * Lidless Eye Part 2 uploaded
  * All official sets uploaded
