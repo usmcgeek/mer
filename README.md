@@ -2,7 +2,7 @@
 
 # April 28 2021 (CARD ART UPDATES)
  * Much better card artwork is now available
- * Updating Sets at this time - Wizards is completed, remaining expected by end of day
+ * Updating Sets at this time - Wizards, White Hand, Dragons completed
  * Will rework Challenge Decks to update and complete remaining printables
 
 # April 2021
