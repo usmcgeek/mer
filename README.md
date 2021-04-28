@@ -1,8 +1,7 @@
 # Middle Earth Remastered Repo
 
 # April 28 2021 (CARD ART UPDATES)
- * Much better card artwork is now available
- * Updating Sets at this time - Wizards, White Hand, Dragons, Dark Minions completed
+ * Much better card artwork is now available and all cards updated
  * Will rework Challenge Decks to update and complete remaining printables
 
 # April 2021
