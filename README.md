@@ -1,5 +1,10 @@
 # Middle Earth Remastered Repo
 
+# April 28 2021 (CARD ART UPDATES)
+ * Much better card artwork is now available
+ * Updating Sets at this time - Wizards is completed, remaining expected by end of day
+ * Will rework Challenge Decks to update and complete remaining printables
+
 # April 2021
  * Uploaded corrected map with Imlad Morgul fixed.
 
