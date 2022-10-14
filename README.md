@@ -9,6 +9,10 @@
  * I have completed everything I set out to - and multiple other places have since created their own remasters
  * This repo is now archived - CardNum has become the main place of play and source of card art for proxies.
 
+# Close-out
+ * Archived classic cards from meccg.es removed
+ * Exported the original 2017 classic MSE card styles and replaced for archive purposes
+
 # April 28 2021
  * All cards updated
  * Will rework Challenge Decks to update and complete remaining printables
