@@ -1,7 +1,16 @@
 # Middle Earth Remastered Repo
 
-# April 28 2021 (CARD ART UPDATES)
- * Much better card artwork is now available and all cards updated
+# Archive
+ * Please note - this project is no longer being maintained
+ * I started this back in 2016 when I retyped every existing card in Magic Set Editor to allow for clear readable text
+ * I created a custom fork of MSE in 2018 to update it to allow for 300dpi image export
+ * As a result of updating MSE for higher resolutions, I created these new Card Frames to replace existing scans
+ * We then updated all cards with the new frames and errata
+ * I have completed everything I set out to - and multiple other places have since created their own remasters
+ * This repo is now archived - CardNum has become the main place of play and source of card art for proxies.
+
+# April 28 2021
+ * All cards updated
  * Will rework Challenge Decks to update and complete remaining printables
 
 # April 2021
